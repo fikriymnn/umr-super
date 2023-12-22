@@ -122,7 +122,7 @@ function ProfileMitra() {
                                 </label>
                                 <div className="grid justify-end mt-3">
                                     <button className="w-[55px] h-[33px] justify-items-end bg-amber-400 rounded-md text-center text-base text-white font-medium">
-                                        <Link href=''>
+                                        <Link href='/mitra/profilemitra/paketselesai'>
                                             <Image
                                                 alt="info"
                                                 src={'/infobutton.png'}
@@ -144,7 +144,7 @@ function ProfileMitra() {
                                 </label>
                                 <div className="grid justify-end mt-3">
                                     <button className="w-[55px] h-[33px] justify-items-end bg-amber-400 rounded-md text-center text-base text-white font-medium">
-                                        <Link href=''>
+                                        <Link href='/mitra/profilemitra/orderselesai'>
                                             <Image
                                                 alt="info"
                                                 src={'/infobutton.png'}
