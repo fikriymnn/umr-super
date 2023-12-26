@@ -3,12 +3,7 @@ import SideBar from "@/components/sideBar";
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import Image from "next/image";
-import TablePaketSelesai from "@/components/tablepaketselesai";
-import TableOrderSelesai from "@/components/tableorderselesai";
-
-
-function OrderSelesai() {
-
+function DetailPaketSelesai() {
     const [dataMitra, setDataMitra] = useState<any>(null);
     let id: any = "";
     useEffect(() => {
@@ -96,36 +91,59 @@ function OrderSelesai() {
                         </div>
 
                         <div className='flex flex-col bg-white w-full h-[750px] shadow-xl rounded-lg px-10 pt-6 pb-8  ml-[29px]'>
+
                             <div>
                                 <label className="text-black text-2xl font-semibold">
-                                    Order Selesai
+                                    Detail Paket Selesai
+                                </label>
+
+                            </div>
+                            <div className="mt-5">
+                                <label className="text-neutral-700 text-base font-medium">
+                                    Nama Paket
                                 </label>
                             </div>
-                            <TableOrderSelesai
-                                nomor={1}
-                                nama_paket={'Umroh Dream eksklusif Jaya Abadi anjay bang daffa'}
-                                harga_paket={'RP.39.000.000,00'}
-                                nama_pelanggan={'Acep'}
-                            />
-                            <TableOrderSelesai
-                                nomor={2}
-                                nama_paket={'Umroh Dream bersama artis acep'}
-                                harga_paket={'RP.79.000.000,00'}
-                                nama_pelanggan={'TIO'}
-                            />
-                            <TableOrderSelesai
-                                nomor={3}
-                                nama_paket={'Umroh Bersama Tiktokers tio'}
-                                harga_paket={'RP.109.000.000,00'}
-                                nama_pelanggan={'Daffa'}
-                            />
+                            <div>
+                                <label className="text-black text-2xl font-semibold">
+                                    Umroh Dream Exclusive Plus Kereta Cepat Bersama Artis
+                                </label>
+                            </div>
+                            <div className="mt-3">
+                                <label className="text-neutral-700 text-base font-medium">
+                                    Harga
+                                </label>
+                            </div>
+                            <div>
+                                <label className="text-yellow-600 text-2xl font-semibold">
+                                    RP.39.000.000,00
+                                </label>
+                            </div>
+                            <div className="mt-3">
+                                <label className="text-neutral-700 text-base font-medium">
+                                    Kuota
+                                </label>
+                            </div>
+                            <div>
+                                <label className="text-black text-2xl font-semibold">
+                                    40
+                                </label>
+                            </div>
+                            <div className="mt-3">
+                                <label className="text-neutral-700 text-base font-medium">
+                                    Jemaah Terdaftar
+                                </label>
+                            </div>
+                            <div>
+                                <label className="text-black text-2xl font-semibold">
+                                    35
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     )
 }
 
-export default OrderSelesai
+export default DetailPaketSelesai

@@ -41,7 +41,7 @@ function DetailPaketAktif() {
                             <div className='flex mt-11'>
 
                                 <label className="grid w-60 h-7 text-xl text-black  font-normal">
-                                    Paket Aktif
+                                    Detail Paket Aktif
                                     <span className="inline-block text-xl text-black  font-semibold ">
                                         4
                                     </span>
