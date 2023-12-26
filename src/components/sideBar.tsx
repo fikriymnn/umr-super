@@ -9,9 +9,11 @@ import { useRouter } from "next/navigation";
 export default function SideBar({
   dashboard,
   mitra,
+  user,
 }: {
   dashboard?: any;
   mitra?: any;
+  user?: any;
 }) {
   const { push } = useRouter();
   const [bar, setBar] = useState(1);
@@ -111,7 +113,7 @@ export default function SideBar({
                             />
                           </svg>
                         </div>
-                        <div className="flex items-center justify-center font-[600] text-[18px] translate-y-[1px]">
+                        <div className="flex items-center justify-center text-lg font-semibold translate-y-[1px]">
                           <p>Dashboard</p>
                         </div>
                       </div>
@@ -166,7 +168,7 @@ export default function SideBar({
                               </svg>
                             </div>
                           </div>
-                          <div className="flex items-center justify-center  font-[600] text-[18px] translate-y-[1px]">
+                          <div className="flex items-center justify-center  text-lg font-semibold translate-y-[1px]">
                             <p>Mitra</p>
                           </div>
                         </div>
@@ -176,6 +178,59 @@ export default function SideBar({
                 </div>
               </div>
             </div>
+            <div>
+              <div className="flex mt-1 ">
+                <div className={`w-full  rounded-[8px] ${orderbar === 1 ? 'pb-1 px-1 yellow ' : ''} duration-100`}>
+
+                  <div className={`${bar == 1
+                    ? "justify-start items-center"
+                    : " justify-center items-center"
+                    } w-full  h-[40px] flex my-1  ps-1 gap-1
+                            rounded-md hover:bg-amber-400 shrink-0 hover:text-white duration-200 ease-in-out ${user}`}>
+                    <a href="/detailuser" className="w-full">
+                      <button
+                      >
+                        {bar === 0 ? (
+                          <div className="flex w-10 justify-center justify-items-center pr-[3px] pt-[3px]">
+                            <svg
+                              width="28"
+                              height="28"
+                              viewBox="0 0 28 28"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M14.0007 4.66667C12.3682 4.66637 10.7642 5.09424 9.34883 5.90757C7.93342 6.7209 6.75609 7.89124 5.93435 9.30178C5.11261 10.7123 4.6752 12.3137 4.66578 13.9461C4.65635 15.5786 5.07525 17.1849 5.88066 18.6048C6.42504 17.8973 7.12483 17.3245 7.92593 16.9306C8.72703 16.5368 9.60798 16.3324 10.5007 16.3333H17.5007C18.3934 16.3324 19.2743 16.5368 20.0754 16.9306C20.8765 17.3245 21.5763 17.8973 22.1207 18.6048C22.9261 17.1849 23.345 15.5786 23.3356 13.9461C23.3261 12.3137 22.8887 10.7123 22.067 9.30178C21.2452 7.89124 20.0679 6.7209 18.6525 5.90757C17.2371 5.09424 15.6331 4.66637 14.0007 4.66667ZM23.2675 21.0887C24.8274 19.0551 25.6711 16.5629 25.6673 14C25.6673 7.5565 20.4442 2.33334 14.0007 2.33334C7.55716 2.33334 2.334 7.5565 2.334 14C2.33015 16.5629 3.17389 19.0552 4.73383 21.0887L4.728 21.1097L5.14216 21.5915C6.23636 22.8708 7.59495 23.8975 9.12427 24.6011C10.6536 25.3046 12.3173 25.6682 14.0007 25.6667C16.3659 25.671 18.676 24.9526 20.6215 23.6075C21.4509 23.0344 22.203 22.3569 22.8592 21.5915L23.2733 21.1097L23.2675 21.0887ZM14.0007 7C13.0724 7 12.1822 7.36875 11.5258 8.02513C10.8694 8.68151 10.5007 9.57174 10.5007 10.5C10.5007 11.4283 10.8694 12.3185 11.5258 12.9749C12.1822 13.6313 13.0724 14 14.0007 14C14.9289 14 15.8192 13.6313 16.4755 12.9749C17.1319 12.3185 17.5007 11.4283 17.5007 10.5C17.5007 9.57174 17.1319 8.68151 16.4755 8.02513C15.8192 7.36875 14.9289 7 14.0007 7Z"
+                                fill="currentColor" />
+                            </svg>
+
+                          </div>
+                        ) : (
+                          <div className="flex gap-[15px] ml-[18px] justify-center items-center  ">
+                            <div className="flex gap-2">
+                              <div className=" ">
+                                <svg
+                                  width="28"
+                                  height="28"
+                                  viewBox="0 0 28 28"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg">
+                                  <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M14.0007 4.66667C12.3682 4.66637 10.7642 5.09424 9.34883 5.90757C7.93342 6.7209 6.75609 7.89124 5.93435 9.30178C5.11261 10.7123 4.6752 12.3137 4.66578 13.9461C4.65635 15.5786 5.07525 17.1849 5.88066 18.6048C6.42504 17.8973 7.12483 17.3245 7.92593 16.9306C8.72703 16.5368 9.60798 16.3324 10.5007 16.3333H17.5007C18.3934 16.3324 19.2743 16.5368 20.0754 16.9306C20.8765 17.3245 21.5763 17.8973 22.1207 18.6048C22.9261 17.1849 23.345 15.5786 23.3356 13.9461C23.3261 12.3137 22.8887 10.7123 22.067 9.30178C21.2452 7.89124 20.0679 6.7209 18.6525 5.90757C17.2371 5.09424 15.6331 4.66637 14.0007 4.66667ZM23.2675 21.0887C24.8274 19.0551 25.6711 16.5629 25.6673 14C25.6673 7.5565 20.4442 2.33334 14.0007 2.33334C7.55716 2.33334 2.334 7.5565 2.334 14C2.33015 16.5629 3.17389 19.0552 4.73383 21.0887L4.728 21.1097L5.14216 21.5915C6.23636 22.8708 7.59495 23.8975 9.12427 24.6011C10.6536 25.3046 12.3173 25.6682 14.0007 25.6667C16.3659 25.671 18.676 24.9526 20.6215 23.6075C21.4509 23.0344 22.203 22.3569 22.8592 21.5915L23.2733 21.1097L23.2675 21.0887ZM14.0007 7C13.0724 7 12.1822 7.36875 11.5258 8.02513C10.8694 8.68151 10.5007 9.57174 10.5007 10.5C10.5007 11.4283 10.8694 12.3185 11.5258 12.9749C12.1822 13.6313 13.0724 14 14.0007 14C14.9289 14 15.8192 13.6313 16.4755 12.9749C17.1319 12.3185 17.5007 11.4283 17.5007 10.5C17.5007 9.57174 17.1319 8.68151 16.4755 8.02513C15.8192 7.36875 14.9289 7 14.0007 7Z"
+                                    fill="currentColor" />
+                                </svg>
+                              </div>
+                            </div>
+                            <div className="flex items-center justify-center  text-lg font-semibold translate-y-[1px]">
+                              <p>User</p>
+                            </div>
+                          </div>
+                        )}
+                      </button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
           <div>
             <button
@@ -209,7 +264,7 @@ export default function SideBar({
               ) : (
                 <div
                   className=" bg-red-600 text-white p-2 pe-3 shrink-0 rounded-md flex gap-2 items-center justify-center 
-                        w-[155px] h-[50px]"
+                  w-[155px] h-[50px]"
                 >
                   <div className="w-8">
                     <svg
