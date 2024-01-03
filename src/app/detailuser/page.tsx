@@ -18,7 +18,7 @@ function DetailUser() {
                                     User Terdaftar
                                 </label>
                             </div>
-                            <div className="relative flex gap-3 w-6/12 py-2">
+                            <div className="relative flex gap-3 lg:w-6/12 w-8/12 py-2">
                                 <input type="text"
                                     className="pl-10 pr-4 py-2 border rounded-md  text-black bg-neutral-200 h-full px-2  w-full"
                                     placeholder="Cari User" />
