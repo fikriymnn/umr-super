@@ -7,23 +7,23 @@ function Tablelistmitra(
     return (
         <div className='flex'>
             <div className='flex w-screen h-full overflow-y-scroll py-3 '>
-                <div className='flex flex-col gap-3 w-7/12 bg-neutral-200 rounded-md shadow-lg py-[15px] px-[15px]'>
+                <div className='flex flex-col gap-3 w-7/12 bg-neutral-200 rounded-md shadow-lg py-[15px] px-[15px] relative'>
                     <div className='flex'>
                         <Image
                             alt="logo1"
                             src={foto_profile}
-                            height={176}
-                            width={176}
+                            height={196}
+                            width={196}
                             className="flex-col shadow w-16 h-16 bg-zinc-300 rounded-full"
                         />
-                        <label className='flex-col w-10/12 mt-4 ml-5 text-black text-2xl font-semibold'>
+                        <label className='flex-col w-10/12 py-2 ml-5 text-black text-xl lg:text-2xl font-semibold items-center'>
                             {nama_mitra}
                         </label>
-                        <div className='flex-col w-2/12 gap-3'>
-                            <button className='w-24 h-7  bg-amber-400 rounded-md text-center text-base text-white font-medium'>
+                        <div className='flex-col w-2/12 gap-3 items-center py-1'>
+                            <button className='lg:w-24 lg:h-7 w-16 h-5 bg-amber-400 rounded-md text-center lg:text-base text-sm text-white font-medium'>
                                 Profile
                             </button>
-                            <button className='w-24 h-7 mt-2 bg-amber-400 rounded-md text-center text-base text-white font-medium'>
+                            <button className='lg:w-24 lg:h-7 w-16 h-5 mt-2 bg-amber-400 rounded-md text-center lg:text-base text-sm text-white font-medium'>
                                 Paket
                             </button>
                         </div>

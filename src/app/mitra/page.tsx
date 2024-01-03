@@ -34,7 +34,7 @@ function Mitra() {
     //         }
     //         id = res.data.data._id;
     //     } catch (error: any) {
-    //         console.log(error.response);
+    //         console.log(error.response);w
     //     }
     // }
 
@@ -78,14 +78,14 @@ function Mitra() {
                                 />
                                 <Tablelistmitra
                                     foto_profile={'/kaaba.jpg'}
-                                    nama_mitra={'Tio Jaya Abadi Travel'}
+                                    nama_mitra={'Tio Jaya Abadi Travel dan friendnya'}
                                     paket_aktif={6}
                                     order_aktif={20}
                                     order_selesai={32}
                                 />
                                 <Tablelistmitra
                                     foto_profile={'/profil.jpeg'}
-                                    nama_mitra={'Noviar Haji dan Umroh'}
+                                    nama_mitra={'Noviar Haji dan Umroh anjaa buaya'}
                                     paket_aktif={4}
                                     order_aktif={2}
                                     order_selesai={28}

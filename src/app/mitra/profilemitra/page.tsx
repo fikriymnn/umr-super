@@ -45,7 +45,7 @@ function ProfileMitra() {
                 <div>
 
                     <div className='flex '>
-                        <div className='flex flex-col bg-white w-5/12 h-[650px] shadow-xl rounded-lg px-8 pt-6 pb-8 mb-4'>
+                        <div className='flex flex-col bg-white lg:w-5/12 w-6/12 h-[650px] shadow-xl rounded-lg px-8 pt-6 pb-8 mb-4'>
 
                             <div className="flex flex-wrap justify-items-center justify-center">
                                 {
@@ -57,34 +57,34 @@ function ProfileMitra() {
                                         src={'/profil.jpeg'}
                                         height={176}
                                         width={176}
-                                        className="shadow w-44 h-44 bg-zinc-300 rounded-full"
+                                        className="shadow lg:w-44 lg:h-44 w-28 h-28 bg-zinc-300 rounded-full"
                                     />
                                 }
 
                             </div>
                             <div>
-                                <label className="flex justify-items-center justify-center mt-[20px] text-black text-2xl font-semibold  text-center">
+                                <label className="flex justify-items-center justify-center mt-[20px] text-black lg:text-2xl text-xl font-semibold  text-center">
                                     {/* {dataMitra == null ? "" : dataMitra.nama_mitra} */}
                                     Noviar Haji Dan Umroh
                                 </label>
                             </div>
                             <div className='grid grid-cols-2 mt-11'>
 
-                                <label className="grid w-60 h-7 text-xl text-black  font-normal">
+                                <label className="grid w-60 h-7 lg:text-xl text-1xl text-black  font-normal">
                                     Paket Aktif
                                     <span className="inline-block text-xl text-black  font-semibold">
                                         4
                                     </span>
                                 </label>
                                 <div className="grid justify-end mt-3">
-                                    <button className="w-[55px] h-[33px] justify-items-end bg-amber-400 rounded-md text-center text-base text-white font-medium">
+                                    <button className="lg:w-[55px] lg:h-[33px] w-9 h-6 lg:justify-items-end bg-amber-400 rounded-md text-center text-base text-white font-medium">
                                         <Link href='/mitra/profilemitra/paketaktifmitra'>
                                             <Image
-                                                alt="info"
+                                                alt="Detail Paket Aktif"
                                                 src={'/infobutton.png'}
                                                 height={25}
                                                 width={25}
-                                                className="ml-[15px]"
+                                                className="lg:ml-[15px] lg:w-[25px] lg:h-[25px] w-4 h-4 ml-[10px]"
                                             />
                                         </Link>
                                     </button>
@@ -92,21 +92,21 @@ function ProfileMitra() {
                             </div>
                             <div className='grid grid-cols-2 mt-4'>
 
-                                <label className="grid w-60 h-7 text-xl text-black  font-normal">
+                                <label className="grid w-60 h-7 lg:text-xl text-1xl text-black  font-normal">
                                     Order Aktif
                                     <span className="inline-block text-xl text-black  font-semibold">
                                         2
                                     </span>
                                 </label>
                                 <div className="grid justify-end mt-3">
-                                    <button className="w-[55px] h-[33px] justify-items-end bg-amber-400 rounded-md text-center text-base text-white font-medium">
+                                    <button className="lg:w-[55px] lg:h-[33px] w-9 h-6 lg:justify-items-end bg-amber-400 rounded-md text-center text-base text-white font-medium">
                                         <Link href=''>
                                             <Image
                                                 alt="info"
                                                 src={'/infobutton.png'}
                                                 height={25}
                                                 width={25}
-                                                className="ml-[15px]"
+                                                className="lg:ml-[15px] lg:w-[25px] lg:h-[25px] w-4 h-4 ml-[10px]"
                                             />
                                         </Link>
                                     </button>
@@ -114,21 +114,21 @@ function ProfileMitra() {
                             </div>
                             <div className='grid grid-cols-2 mt-4'>
 
-                                <label className="grid w-60 h-7 text-xl text-black  font-normal">
+                                <label className="grid w-60 h-7 lg:text-xl text-1xl text-black  font-normal">
                                     Paket Selesai
                                     <span className="inline-block text-xl text-black  font-semibold">
                                         12
                                     </span>
                                 </label>
                                 <div className="grid justify-end mt-3">
-                                    <button className="w-[55px] h-[33px] justify-items-end bg-amber-400 rounded-md text-center text-base text-white font-medium">
+                                    <button className="lg:w-[55px] lg:h-[33px] w-9 h-6 lg:justify-items-end bg-amber-400 rounded-md text-center text-base text-white font-medium">
                                         <Link href='/mitra/profilemitra/paketselesai'>
                                             <Image
                                                 alt="info"
                                                 src={'/infobutton.png'}
                                                 height={25}
                                                 width={25}
-                                                className="ml-[15px]"
+                                                className="lg:ml-[15px] lg:w-[25px] lg:h-[25px] w-4 h-4 ml-[10px]"
                                             />
                                         </Link>
                                     </button>
@@ -136,21 +136,21 @@ function ProfileMitra() {
                             </div>
                             <div className='grid grid-cols-2 mt-4'>
 
-                                <label className="grid w-60 h-7 text-xl text-black  font-normal">
+                                <label className="grid w-60 h-7 lg:text-xl text-1xl text-black  font-normal">
                                     Order Selesai
                                     <span className="inline-block text-xl text-black  font-semibold">
                                         28
                                     </span>
                                 </label>
                                 <div className="grid justify-end mt-3">
-                                    <button className="w-[55px] h-[33px] justify-items-end bg-amber-400 rounded-md text-center text-base text-white font-medium">
+                                    <button className="lg:w-[55px] lg:h-[33px] w-9 h-6 lg:justify-items-end bg-amber-400 rounded-md text-center text-base text-white font-medium">
                                         <Link href='/mitra/profilemitra/orderselesai'>
                                             <Image
                                                 alt="info"
                                                 src={'/infobutton.png'}
                                                 height={25}
                                                 width={25}
-                                                className="ml-[15px]"
+                                                className="lg:ml-[15px] lg:w-[25px] lg:h-[25px] w-4 h-4 ml-[10px]"
                                             />
                                         </Link>
                                     </button>
@@ -158,21 +158,21 @@ function ProfileMitra() {
                             </div>
                             <div className='grid grid-cols-2 mt-4'>
 
-                                <label className="grid w-60 h-7 text-xl text-black  font-normal">
+                                <label className="grid w-60 h-7 lg:text-xl text-1xl text-black  font-normal">
                                     Penilaian
                                     <span className="inline-block text-xl text-black  font-semibold">
                                         50
                                     </span>
                                 </label>
                                 <div className="grid justify-end mt-3">
-                                    <button className="w-[55px] h-[33px] justify-items-end bg-amber-400 rounded-md text-center text-base text-white font-medium">
+                                    <button className="lg:w-[55px] lg:h-[33px] w-9 h-6 lg:justify-items-end bg-amber-400 rounded-md text-center text-base text-white font-medium">
                                         <Link href=''>
                                             <Image
                                                 alt="info"
                                                 src={'/infobutton.png'}
                                                 height={25}
                                                 width={25}
-                                                className="ml-[15px]"
+                                                className="lg:ml-[15px] lg:w-[25px] lg:h-[25px] w-4 h-4 ml-[10px]"
                                             />
                                         </Link>
                                     </button>
