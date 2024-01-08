@@ -17,11 +17,9 @@ function PaketSelesai() {
         <div className='flex'>
             <SideBar mitra="text-white bg-[#E3B02B]" />
             <div className='h-screen w-screen grey px-[28px] py-[20px]  overflow-y-scroll' >
-
                 <div>
-
                     <div className='flex '>
-                        <div className='flex flex-col bg-white w-5/12 h-[650px] shadow-xl rounded-lg px-8 pt-6 pb-8 mb-4'>
+                        <div className='flex flex-col bg-white lg:w-5/12 w-4/12 h-[650px] shadow-xl rounded-lg px-8 pt-6 pb-8 ml-1 '>
 
                             <div className="flex flex-wrap justify-items-center justify-center">
                                 {
@@ -32,19 +30,19 @@ function PaketSelesai() {
                                         src={'/profil.jpeg'}
                                         height={176}
                                         width={176}
-                                        className="shadow w-44 h-44 bg-zinc-300 rounded-full"
+                                        className="shadow lg:w-44 lg:h-44 w-28 h-28 bg-zinc-300 rounded-full"
                                     />
                                 }
                             </div>
                             <div>
-                                <label className="flex justify-items-center justify-center mt-[20px] text-black text-2xl font-semibold  text-center">
+                                <label className="flex justify-items-center justify-center mt-[20px] text-black lg:text-2xl text-xl font-semibold  text-center">
                                     {/* {dataMitra == null ? "" : dataMitra.nama_mitra} */}
                                     Noviar Haji Dan Umroh
                                 </label>
                             </div>
                             <div className='flex mt-11'>
 
-                                <label className="grid w-60 h-7 text-xl text-black  font-normal">
+                                <label className="grid w-60 h-7 lg:text-xl text-1xl text-black  font-normal">
                                     Paket Aktif
                                     <span className="inline-block text-xl text-black  font-semibold ">
                                         4
@@ -54,7 +52,7 @@ function PaketSelesai() {
                             </div>
                             <div className='flex mt-8'>
 
-                                <label className="grid w-60 h-7 text-xl text-black  font-normal">
+                                <label className="grid w-60 h-7 lg:text-xl text-1xl text-black  font-normal">
                                     Order Aktif
                                     <span className="inline-block text-xl text-black  font-semibold">
                                         2
@@ -64,7 +62,7 @@ function PaketSelesai() {
                             </div>
                             <div className='flex mt-8'>
 
-                                <label className="grid w-60 h-7 text-xl text-black  font-normal">
+                                <label className="grid w-60 h-7 lg:text-xl text-1xl text-black  font-normal">
                                     Paket Selesai
                                     <span className="inline-block text-xl text-black  font-semibold">
                                         12
@@ -74,7 +72,7 @@ function PaketSelesai() {
                             </div>
                             <div className='flex mt-8'>
 
-                                <label className="grid w-60 h-7 text-xl text-black  font-normal">
+                                <label className="grid w-60 h-7 lg:text-xl text-1xl text-black  font-normal">
                                     Order Selesai
                                     <span className="inline-block text-xl text-black  font-semibold">
                                         28
@@ -84,7 +82,7 @@ function PaketSelesai() {
                             </div>
                             <div className='flex mt-8'>
 
-                                <label className="grid w-60 h-7 text-xl text-black  font-normal">
+                                <label className="grid w-60 h-7 lg:text-xl text-1xl text-black  font-normal">
                                     Penilaian
                                     <span className="inline-block text-xl text-black  font-semibold">
                                         50
@@ -94,7 +92,7 @@ function PaketSelesai() {
                             </div>
                         </div>
 
-                        <div className='flex flex-col bg-white w-full h-[750px] shadow-xl rounded-lg px-10 pt-6 pb-8  ml-[29px]'>
+                        <div className='flex flex-col bg-white w-full h-[750px] shadow-xl rounded-lg pl-8 pt-6 pb-8 pr-[22px] ml-[29px]'>
                             <div>
                                 <label className="text-black text-2xl font-semibold">
                                     Paket Selesai

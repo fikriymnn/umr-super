@@ -50,7 +50,7 @@ function DetailUser() {
                                 />
                                 <TableUser
                                     foto_profile={'/logo.png'}
-                                    nama_user={'Tio Sendiri'}
+                                    nama_user={'Tio Sendi rissss aaaaaaaaaannnnn'}
                                     no_wa={'0857575757'}
                                     email_user={'emailace3p@email.com'}
                                 />

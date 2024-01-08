@@ -18,7 +18,7 @@ function TableUser(
                             className="flex-col shadow w-20 h-20 bg-zinc-300 rounded-full"
                         />
                         <div className='px-5'>
-                            <label className='flex-col w-10/12 mt-4 ml-5 text-black lg:text-2xl text-xl font-semibold'>
+                            <label className='flex-col w-full mt-4 ml-5 text-black line-clamp-1 lg:text-2xl text-xl font-semibold'>
                                 {nama_user}
                             </label>
                             <div className='mt-1'>

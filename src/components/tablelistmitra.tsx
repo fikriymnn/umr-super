@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from "next/image";
+import Link from 'next/link';
 
 function Tablelistmitra(
     { foto_profile, nama_mitra, paket_aktif, order_aktif, order_selesai }: { foto_profile: any, nama_mitra: any, paket_aktif: any, order_aktif: any, order_selesai: any }
@@ -16,14 +17,19 @@ function Tablelistmitra(
                             width={196}
                             className="flex-col shadow w-16 h-16 bg-zinc-300 rounded-full"
                         />
-                        <label className='flex-col w-10/12 py-2 ml-5 text-black text-xl lg:text-2xl font-semibold items-center'>
-                            {nama_mitra}
-                        </label>
-                        <div className='flex-col w-2/12 gap-3 items-center py-1'>
-                            <button className='lg:w-24 lg:h-7 w-16 h-5 bg-amber-400 rounded-md text-center lg:text-base text-sm text-white font-medium'>
-                                Profile
+                        <div className='flex-col w-10/12 py-2 ml-5  items-center'>
+                            <label className=' text-black text-xl lg:text-2xl font-semibold line-clamp-1'>
+                                {nama_mitra}
+                            </label>
+                        </div>
+
+                        <div className='flex-col w-2/12 gap-3 items-center lg:py-1 pt-5'>
+                            <button className='lg:w-24 lg:h-7 w-14 h-5 bg-amber-400 rounded-md text-center lg:text-base text-xs text-white font-medium'>
+                                <Link href='/mitra/profilemitra'>
+                                    Profile
+                                </Link>
                             </button>
-                            <button className='lg:w-24 lg:h-7 w-16 h-5 mt-2 bg-amber-400 rounded-md text-center lg:text-base text-sm text-white font-medium'>
+                            <button className='lg:w-24 lg:h-7 w-14 h-5 mt-2 bg-amber-400 rounded-md text-center lg:text-base text-xs text-white font-medium'>
                                 Paket
                             </button>
                         </div>
