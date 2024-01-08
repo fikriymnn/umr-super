@@ -17,7 +17,7 @@ function DetailPaketSelesai() {
                 <div>
 
                     <div className='flex '>
-                        <div className='flex flex-col bg-white w-5/12 h-[650px] shadow-xl rounded-lg px-8 pt-6 pb-8 mb-4'>
+                        <div className='flex flex-col bg-white lg:w-5/12 w-4/12 h-[650px] shadow-xl rounded-lg px-8 pt-6 pb-8 ml-1 '>
 
                             <div className="flex flex-wrap justify-items-center justify-center">
                                 {
@@ -28,19 +28,19 @@ function DetailPaketSelesai() {
                                         src={'/profil.jpeg'}
                                         height={176}
                                         width={176}
-                                        className="shadow w-44 h-44 bg-zinc-300 rounded-full"
+                                        className="shadow lg:w-44 lg:h-44 w-28 h-28 bg-zinc-300 rounded-full"
                                     />
                                 }
                             </div>
                             <div>
-                                <label className="flex justify-items-center justify-center mt-[20px] text-black text-2xl font-semibold  text-center">
+                                <label className="flex justify-items-center justify-center mt-[20px] text-black lg:text-2xl text-xl font-semibold  text-center">
                                     {/* {dataMitra == null ? "" : dataMitra.nama_mitra} */}
                                     Noviar Haji Dan Umroh
                                 </label>
                             </div>
                             <div className='flex mt-11'>
 
-                                <label className="grid w-60 h-7 text-xl text-black  font-normal">
+                                <label className="grid w-60 h-7 lg:text-xl text-1xl text-black  font-normal">
                                     Paket Aktif
                                     <span className="inline-block text-xl text-black  font-semibold ">
                                         4
@@ -50,7 +50,7 @@ function DetailPaketSelesai() {
                             </div>
                             <div className='flex mt-8'>
 
-                                <label className="grid w-60 h-7 text-xl text-black  font-normal">
+                                <label className="grid w-60 h-7 lg:text-xl text-1xl text-black  font-normal">
                                     Order Aktif
                                     <span className="inline-block text-xl text-black  font-semibold">
                                         2
@@ -60,7 +60,7 @@ function DetailPaketSelesai() {
                             </div>
                             <div className='flex mt-8'>
 
-                                <label className="grid w-60 h-7 text-xl text-black  font-normal">
+                                <label className="grid w-60 h-7 lg:text-xl text-1xl text-black  font-normal">
                                     Paket Selesai
                                     <span className="inline-block text-xl text-black  font-semibold">
                                         12
@@ -70,7 +70,7 @@ function DetailPaketSelesai() {
                             </div>
                             <div className='flex mt-8'>
 
-                                <label className="grid w-60 h-7 text-xl text-black  font-normal">
+                                <label className="grid w-60 h-7 lg:text-xl text-1xl text-black  font-normal">
                                     Order Selesai
                                     <span className="inline-block text-xl text-black  font-semibold">
                                         28
@@ -80,7 +80,7 @@ function DetailPaketSelesai() {
                             </div>
                             <div className='flex mt-8'>
 
-                                <label className="grid w-60 h-7 text-xl text-black  font-normal">
+                                <label className="grid w-60 h-7 lg:text-xl text-1xl text-black  font-normal">
                                     Penilaian
                                     <span className="inline-block text-xl text-black  font-semibold">
                                         50
@@ -93,7 +93,7 @@ function DetailPaketSelesai() {
                         <div className='flex flex-col bg-white w-full h-[750px] shadow-xl rounded-lg px-10 pt-6 pb-8  ml-[29px]'>
 
                             <div>
-                                <label className="text-black text-2xl font-semibold">
+                                <label className="text-black lg:text-2xl text-xl font-semibold">
                                     Detail Paket Selesai
                                 </label>
 
@@ -104,7 +104,7 @@ function DetailPaketSelesai() {
                                 </label>
                             </div>
                             <div>
-                                <label className="text-black text-2xl font-semibold">
+                                <label className="text-black lg:text-2xl text-xl font-semibold">
                                     Umroh Dream Exclusive Plus Kereta Cepat Bersama Artis
                                 </label>
                             </div>
@@ -114,7 +114,7 @@ function DetailPaketSelesai() {
                                 </label>
                             </div>
                             <div>
-                                <label className="text-yellow-600 text-2xl font-semibold">
+                                <label className="text-yellow-600 lg:text-2xl text-xl font-semibold">
                                     RP.39.000.000,00
                                 </label>
                             </div>
@@ -124,7 +124,7 @@ function DetailPaketSelesai() {
                                 </label>
                             </div>
                             <div>
-                                <label className="text-black text-2xl font-semibold">
+                                <label className="text-black lg:text-2xl text-xl font-semibold">
                                     40
                                 </label>
                             </div>
@@ -134,7 +134,7 @@ function DetailPaketSelesai() {
                                 </label>
                             </div>
                             <div>
-                                <label className="text-black text-2xl font-semibold">
+                                <label className="text-black lg:text-2xl text-xl font-semibold">
                                     35
                                 </label>
                             </div>

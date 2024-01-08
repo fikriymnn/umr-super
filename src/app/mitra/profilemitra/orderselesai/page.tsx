@@ -3,7 +3,7 @@ import SideBar from "@/components/sideBar";
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import Image from "next/image";
-import TablePaketSelesai from "@/components/tablepaketselesai";
+
 import TableOrderSelesai from "@/components/tableorderselesai";
 
 
@@ -18,11 +18,9 @@ function OrderSelesai() {
         <div className='flex'>
             <SideBar mitra="text-white bg-[#E3B02B]" />
             <div className='h-screen w-screen grey px-[28px] py-[20px]  overflow-y-scroll' >
-
                 <div>
-
                     <div className='flex '>
-                        <div className='flex flex-col bg-white lg:w-5/12 w-4/12 h-[650px] shadow-xl rounded-lg px-8 pt-6 pb-8  '>
+                        <div className='flex flex-col bg-white lg:w-5/12 w-4/12 h-[650px] shadow-xl rounded-lg px-8 pt-6 pb-8 ml-1  '>
 
                             <div className="flex flex-wrap justify-items-center justify-center">
                                 {
@@ -95,7 +93,7 @@ function OrderSelesai() {
                             </div>
                         </div>
 
-                        <div className='flex flex-col bg-white w-full h-[750px] shadow-xl rounded-lg px-10 pt-6 pb-8 pr-[32px] ml-[29px]'>
+                        <div className='flex flex-col bg-white w-full h-[750px] shadow-xl rounded-lg pl-8 pt-6 pb-8 pr-[22px] ml-[29px]'>
                             <div>
                                 <label className="text-black text-2xl font-semibold">
                                     Order Selesai

@@ -78,14 +78,14 @@ function Mitra() {
                                 />
                                 <Tablelistmitra
                                     foto_profile={'/kaaba.jpg'}
-                                    nama_mitra={'Tio Jaya Abadi Travel dan friendnya'}
+                                    nama_mitra={'Tio Jaya Abadi Travel  asdasdas asdasda'}
                                     paket_aktif={6}
                                     order_aktif={20}
                                     order_selesai={32}
                                 />
                                 <Tablelistmitra
                                     foto_profile={'/profil.jpeg'}
-                                    nama_mitra={'Noviar Haji dan Umroh anjaa buaya'}
+                                    nama_mitra={'Noviar Haji dan Umroh asdas asdasdas asdas'}
                                     paket_aktif={4}
                                     order_aktif={2}
                                     order_selesai={28}
