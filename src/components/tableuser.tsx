@@ -6,8 +6,8 @@ function TableUser(
 ) {
     return (
         <div className='flex'>
-            <div className='flex w-screen h-full overflow-y-scroll py-3 '>
-                <div className='flex flex-col gap-3 lg:w-6/12 w-8/12 bg-neutral-200 rounded-md shadow-lg py-[15px] px-[15px]'>
+            <div className='flex w-screen h-full overflow-y-scroll py-2 '>
+                <div className='flex flex-col gap-3 lg:w-6/12 w-8/12 bg-neutral-200 rounded-md shadow-lg lg:py-[12px] lg:px-[12px] py-2 px-2'>
 
                     <div className='flex px-5 py-1 '>
                         <Image
@@ -18,7 +18,7 @@ function TableUser(
                             className="flex-col shadow w-20 h-20 bg-zinc-300 rounded-full"
                         />
                         <div className='px-5'>
-                            <label className='flex-col w-full mt-4 ml-5 text-black line-clamp-1 lg:text-2xl text-xl font-semibold'>
+                            <label className='flex-col w-full ml-5 text-black line-clamp-1 lg:text-2xl text-xl font-semibold'>
                                 {nama_user}
                             </label>
                             <div className='mt-1'>

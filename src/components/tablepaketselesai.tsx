@@ -25,7 +25,7 @@ function TablePaketSelesai(
                                     <label className='text-yellow-600 text-xl font-semibold'>
                                         {harga_paket}
                                     </label>
-                                    <div className='flex w-[300px]'>
+                                    <div className='flex lg:w-[300px] w-full'>
                                         <label className='flex w-full  text-neutral-500 lg:text-xl text-base font-semibold'>
                                             {kuota}
                                             <p className='pl-1 pr-3'>

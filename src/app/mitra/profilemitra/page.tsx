@@ -45,7 +45,7 @@ function ProfileMitra() {
                 <div>
 
                     <div className='flex '>
-                        <div className='flex flex-col bg-white lg:w-5/12 w-6/12 h-[650px] shadow-xl rounded-lg px-8 pt-6 pb-8 mb-4'>
+                        <div className='flex flex-col bg-white lg:w-5/12 w-6/12 h-full shadow-xl rounded-lg px-8 pt-6 lg:pb-9  pb-20'>
 
                             <div className="flex flex-wrap justify-items-center justify-center">
                                 {
@@ -180,86 +180,86 @@ function ProfileMitra() {
                             </div>
                         </div>
 
-                        <div className='flex flex-col bg-white w-full h-[650px] shadow-xl rounded-lg   pl-[71px] pr-[32px] pt-[50px] pb-8 mb-4  ml-[29px]'>
+                        <div className='flex flex-col bg-white w-full h-full shadow-xl rounded-lg   pl-[71px] pr-[32px] pt-[50px] lg:pb-16 pb-10 ml-[29px]'>
 
                             <div className='grid grid-cols-2'>
 
-                                <label className="grid w-60 h-7 text-xl text-black  font-normal">
+                                <label className="grid w-60 h-7 lg:text-xl text-lg text-black  font-normal">
                                     Nama Mitra
                                 </label>
 
                             </div>
                             <div>
-                                <label className="w-60 h-7 text-xl text-black  font-semibold">
+                                <label className="w-60 h-7 lg:text-xl text-lg text-black  font-semibold">
                                     {/* {dataMitra == null ? "" : dataMitra.nama_mitra} */}
                                     Noviar Haji Dan Umroh
                                 </label>
                             </div>
 
-                            <div className='mt-[24px]'>
-                                <label className="w-full h-7 text-xl text-black  font-normal">
+                            <div className='lg:mt-[24px] mt-4'>
+                                <label className="w-full h-7 lg:text-xl text-lg text-black  font-normal">
                                     Nama Perusahaan
                                 </label>
                             </div>
                             <div>
-                                <label className="w-full h-7 text-xl text-black  font-semibold">
+                                <label className="w-full h-7 lg:text-xl text-lg text-black  font-semibold">
                                     {/* {dataMitra == null ? "" : dataMitra.nama_pt} */}
                                     PT. Noviar Haji Dan Umroh
                                 </label>
                             </div>
 
-                            <div className='mt-[24px]'>
-                                <label className="w-full h-7 text-xl text-black  font-normal">
+                            <div className='lg:mt-[24px] mt-4'>
+                                <label className="w-full h-7 lg:text-xl text-lg text-black  font-normal">
                                     Nomor Izin
                                 </label>
                             </div>
                             <div>
-                                <label className="w-full h-7 text-xl text-black  font-semibold">
+                                <label className="w-full h-7 lg:text-xl text-lg text-black  font-semibold">
                                     {/* {dataMitra == null ? "" : dataMitra.no_izin_umroh} */}
                                     109820212
                                 </label>
                             </div>
-                            <div className='mt-[24px]'>
-                                <label className="w-full h-7 text-xl text-black  font-normal">
+                            <div className='lg:mt-[24px] mt-4'>
+                                <label className="w-full h-7 lg:text-xl text-lg text-black  font-normal">
                                     Lokasi
                                 </label>
                             </div>
                             <div>
-                                <label className="w-full h-7 text-xl text-black  font-semibold">
+                                <label className="w-full h-7 lg:text-xl text-lg text-black  font-semibold">
                                     {/* {dataMitra == null ? "" : dataMitra.location} */}
                                     Bandung
                                 </label>
                             </div>
-                            <div className='mt-[24px]'>
-                                <label className="w-full h-7 text-xl text-black  font-normal">
+                            <div className='lg:mt-[24px] mt-4'>
+                                <label className="w-full h-7 lg:text-xl text-lg text-black  font-normal">
                                     Email
                                 </label>
                             </div>
                             <div>
-                                <label className="w-full h-7 text-xl text-black  font-semibold">
+                                <label className="w-full h-7 lg:text-xl text-lg text-black  font-semibold">
                                     {/* {dataMitra == null ? "" : dataMitra.email} */}
                                     tio@mail.com
                                 </label>
                             </div>
-                            <div className='mt-[24px]'>
-                                <label className="w-full h-7 text-xl text-black  font-normal">
+                            <div className='lg:mt-[24px] mt-4'>
+                                <label className="w-full h-7 lg:text-xl text-lg text-black  font-normal">
                                     Website
                                 </label>
                             </div>
                             <div>
-                                <label className="w-full h-7 text-xl text-black  font-semibold">
+                                <label className="w-full h-7 lg:text-xl text-lg text-black  font-semibold">
                                     {/* {dataMitra == null ? "" : dataMitra.website} */}
                                     noviartio.com
                                 </label>
                             </div>
 
-                            <div className='mt-[24px]'>
-                                <label className="w-full h-7 text-xl text-black  font-normal">
+                            <div className='lg:mt-[24px] mt-4'>
+                                <label className="w-full h-7 lg:text-xl text-lg text-black  font-normal">
                                     Rating
                                 </label>
                             </div>
                             <div>
-                                <label className="w-full h-7 text-xl text-black  font-semibold">
+                                <label className="w-full h-7 lg:text-xl text-lg text-black  font-semibold">
                                     {/* {dataMitra == null ? "" : dataMitra.rating}/5 */}
                                     5/5
                                 </label>

@@ -17,7 +17,7 @@ function DetailPaketAktif() {
                 <div>
 
                     <div className='flex '>
-                        <div className='flex flex-col bg-white lg:w-5/12 w-4/12 h-[650px] shadow-xl rounded-lg px-8 pt-6 pb-8 ml-1 '>
+                        <div className='flex flex-col bg-white lg:w-5/12 w-4/12 lg:h-[650px] h-full shadow-xl rounded-lg px-8 pt-6 lg:pb-8 pb-12 ml-1 '>
 
                             <div className="flex flex-wrap justify-items-center justify-center">
                                 {
@@ -90,7 +90,7 @@ function DetailPaketAktif() {
                             </div>
                         </div>
 
-                        <div className='flex flex-col bg-white w-full h-[750px] shadow-xl rounded-lg px-10 pt-6 pb-8  ml-[29px]'>
+                        <div className='flex flex-col bg-white w-full lg:h-[750px] h-full shadow-xl rounded-lg px-10 pt-6 lg:pb-8 pb-[160px]  ml-[29px]'>
 
                             <div>
                                 <label className="text-black text-2xl font-semibold">
