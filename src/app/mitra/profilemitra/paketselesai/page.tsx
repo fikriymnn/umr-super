@@ -19,7 +19,7 @@ function PaketSelesai() {
             <div className='h-screen w-screen grey px-[28px] py-[20px]  overflow-y-scroll' >
                 <div>
                     <div className='flex '>
-                        <div className='flex flex-col bg-white lg:w-5/12 w-4/12 h-[650px] shadow-xl rounded-lg px-8 pt-6 pb-8 ml-1 '>
+                        <div className='flex flex-col bg-white lg:w-5/12 w-4/12 lg:h-[650px] h-full shadow-xl rounded-lg px-8 pt-6 lg:pb-8 pb-12 ml-1  '>
 
                             <div className="flex flex-wrap justify-items-center justify-center">
                                 {
@@ -92,7 +92,7 @@ function PaketSelesai() {
                             </div>
                         </div>
 
-                        <div className='flex flex-col bg-white w-full h-[750px] shadow-xl rounded-lg pl-8 pt-6 pb-8 pr-[22px] ml-[29px]'>
+                        <div className='flex flex-col bg-white w-full lg:h-[750px] h-full shadow-xl rounded-lg pl-8 pt-6 pb-8 lg:pr-5 pr-3 ml-[29px]'>
                             <div>
                                 <label className="text-black text-2xl font-semibold">
                                     Paket Selesai
@@ -114,6 +114,14 @@ function PaketSelesai() {
                             />
                             <TablePaketSelesai
                                 nomor={3}
+                                nama_paket={'Umroh Bersama Tiktokers tio'}
+                                harga_paket={'RP.109.000.000,00'}
+                                kuota={3}
+                                terdaftar={211}
+
+                            />
+                            <TablePaketSelesai
+                                nomor={1011}
                                 nama_paket={'Umroh Bersama Tiktokers tio'}
                                 harga_paket={'RP.109.000.000,00'}
                                 kuota={3}

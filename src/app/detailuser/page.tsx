@@ -1,8 +1,6 @@
 "use client"
 import SideBar from "@/components/sideBar";
-import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
-import Tablelistmitra from "@/components/tablelistmitra";
 import TableUser from "@/components/tableuser";
 
 function DetailUser() {
@@ -12,7 +10,7 @@ function DetailUser() {
             <div className='h-screen w-screen grey px-[28px] py-[20px]  overflow-y-scroll' >
                 <div>
                     <div className='flex '>
-                        <div className='flex flex-col bg-white w-full h-[750px] shadow-xl rounded-lg px-8 py-8'>
+                        <div className='flex flex-col bg-white w-full h-full shadow-xl rounded-lg px-8 lg:pt-8 pt-5 lg:pb-24 pb-11'>
                             <div>
                                 <label className="text-black text-2xl font-semibold">
                                     User Terdaftar
@@ -47,6 +45,12 @@ function DetailUser() {
                                     nama_user={'Tio And Enemy'}
                                     no_wa={'0846464646'}
                                     email_user={'emailace2p@email.com'}
+                                />
+                                <TableUser
+                                    foto_profile={'/logo.png'}
+                                    nama_user={'Tio Sendi rissss aaaaaaaaaannnnn'}
+                                    no_wa={'0857575757'}
+                                    email_user={'emailace3p@email.com'}
                                 />
                                 <TableUser
                                     foto_profile={'/logo.png'}
