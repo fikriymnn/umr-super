@@ -94,7 +94,7 @@ function PaketAktifMitra() {
                         </div>
 
                         <div className='flex flex-col bg-white w-full lg:h-[750px] h-full shadow-xl rounded-lg   ml-[29px]'>
-                            <div className="pl-8 py-6 pr-4">
+                            <div className="pl-8 lg:py-6 pt-6 pb-[75px] pr-4">
                                 <div>
                                     <label className="text-black text-2xl font-semibold">
                                         Paket Aktif
