@@ -90,7 +90,7 @@ function DetailPaketSelesai() {
                             </div>
                         </div>
 
-                        <div className='flex flex-col bg-white w-full lg:h-[750px] h-full shadow-xl rounded-lg px-10 pt-6 lg:pb-8 pb-[230px]  ml-[29px]'>
+                        <div className='flex flex-col bg-white w-full lg:h-[750px] h-full shadow-xl rounded-lg px-10 pt-6 lg:pb-8 pb-[267px]  ml-[29px]'>
 
                             <div>
                                 <label className="text-black lg:text-2xl text-xl font-semibold">
