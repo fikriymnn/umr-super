@@ -4,6 +4,7 @@ import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import Image from "next/image";
 import TablePaketAktif from "@/components/tablelistpaketaktif";
+import Pagination from "@/components/pagination";
 // import axios from 'axios';
 
 
@@ -132,7 +133,11 @@ function PaketAktifMitra() {
                                     terdaftar={211}
                                     tersedia={3}
                                 />
+                                <div className="grid grid-cols-1 h-7 px-12 pt-20 justify-items-center">
+                                    <Pagination currentPage={1} totalPages={5} />
+                                </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
