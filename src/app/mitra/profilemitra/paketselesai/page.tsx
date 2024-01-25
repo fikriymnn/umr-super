@@ -4,6 +4,7 @@ import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import Image from "next/image";
 import TablePaketSelesai from "@/components/tablepaketselesai";
+import Pagination from "@/components/pagination";
 
 
 function PaketSelesai() {
@@ -121,13 +122,16 @@ function PaketSelesai() {
 
                             />
                             <TablePaketSelesai
-                                nomor={1011}
+                                nomor={10}
                                 nama_paket={'Umroh Bersama Tiktokers tio'}
                                 harga_paket={'RP.109.000.000,00'}
                                 kuota={3}
                                 terdaftar={211}
 
                             />
+                            <div className="grid grid-cols-1 h-7 px-12 pt-20 justify-items-center">
+                                <Pagination currentPage={1} totalPages={5} />
+                            </div>
                         </div>
                     </div>
                 </div>

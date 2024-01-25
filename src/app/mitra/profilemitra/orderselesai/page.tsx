@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react'
 import Image from "next/image";
 
 import TableOrderSelesai from "@/components/tableorderselesai";
+import Pagination from "@/components/pagination";
 
 
 function OrderSelesai() {
@@ -123,6 +124,9 @@ function OrderSelesai() {
                                 harga_paket={'RP.109.000.000,00'}
                                 nama_pelanggan={'Daffa'}
                             />
+                            <div className="grid grid-cols-1 h-7 px-12 pt-20 justify-items-center">
+                                <Pagination currentPage={1} totalPages={5} />
+                            </div>
                         </div>
                     </div>
                 </div>

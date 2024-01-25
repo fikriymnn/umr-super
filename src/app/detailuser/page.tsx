@@ -2,6 +2,7 @@
 import SideBar from "@/components/sideBar";
 import React, { useEffect, useState } from 'react'
 import TableUser from "@/components/tableuser";
+import Pagination from "@/components/pagination";
 
 function DetailUser() {
     return (
@@ -10,7 +11,7 @@ function DetailUser() {
             <div className='h-screen w-screen grey px-[28px] py-[20px]  overflow-y-scroll' >
                 <div>
                     <div className='flex '>
-                        <div className='flex flex-col bg-white w-full h-full shadow-xl rounded-lg px-8 lg:pt-8 pt-5 lg:pb-24 pb-11'>
+                        <div className='flex flex-col bg-white w-full h-full shadow-xl rounded-lg px-8 lg:pt-8 pt-5 lg:pb-18 pb-11'>
                             <div>
                                 <label className="text-black text-2xl font-semibold">
                                     User Terdaftar
@@ -58,6 +59,9 @@ function DetailUser() {
                                     no_wa={'0857575757'}
                                     email_user={'emailace3p@email.com'}
                                 />
+                            </div>
+                            <div className="grid grid-cols-1 h-7 px-12 py-8 justify-items-center">
+                                <Pagination currentPage={1} totalPages={5} />
                             </div>
                         </div>
                     </div>
