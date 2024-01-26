@@ -11,7 +11,7 @@ function DetailUser() {
             <div className='h-screen w-screen grey px-[28px] py-[20px]  overflow-y-scroll' >
                 <div>
                     <div className='flex '>
-                        <div className='flex flex-col bg-white w-full h-full shadow-xl rounded-lg px-8 lg:pt-8 pt-5 lg:pb-18 pb-11'>
+                        <div className='flex flex-col bg-white w-full h-full shadow-xl rounded-lg px-8 lg:pt-8 pt-5 lg:pb-14 pb-11'>
                             <div>
                                 <label className="text-black text-2xl font-semibold">
                                     User Terdaftar
@@ -49,18 +49,18 @@ function DetailUser() {
                                 />
                                 <TableUser
                                     foto_profile={'/logo.png'}
-                                    nama_user={'Tio Sendi rissss aaaaaaaaaannnnn'}
+                                    nama_user={'Tio Sendi rissss aaaaaaaa'}
                                     no_wa={'0857575757'}
                                     email_user={'emailace3p@email.com'}
                                 />
                                 <TableUser
                                     foto_profile={'/logo.png'}
-                                    nama_user={'Tio Sendi rissss aaaaaaaaaannnnn'}
+                                    nama_user={'Tio Sendi rissss aaaaaaaa'}
                                     no_wa={'0857575757'}
                                     email_user={'emailace3p@email.com'}
                                 />
                             </div>
-                            <div className="grid grid-cols-1 h-7 px-12 py-8 justify-items-center">
+                            <div className="grid grid-cols-1 h-7 px-12 pt-10 justify-items-center">
                                 <Pagination currentPage={1} totalPages={5} />
                             </div>
                         </div>

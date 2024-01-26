@@ -21,7 +21,7 @@ function PaketAktifMitra() {
             <div className='h-screen w-screen grey px-[28px] py-[20px]  overflow-y-scroll' >
                 <div>
                     <div className='flex '>
-                        <div className='flex flex-col bg-white lg:w-5/12 w-4/12 lg:h-[650px] h-full shadow-xl rounded-lg px-8 pt-6 lg:pb-8 pb-12 ml-1 '>
+                        <div className='flex flex-col bg-white lg:w-5/12 w-4/12 lg:h-[650px] h-full shadow-xl rounded-lg px-8 pt-6 lg:pb-8 pb-12 ml-1'>
 
                             <div className="flex flex-wrap justify-items-center justify-center">
                                 {
@@ -94,49 +94,49 @@ function PaketAktifMitra() {
                             </div>
                         </div>
 
-                        <div className='flex flex-col bg-white w-full lg:h-[750px] h-full shadow-xl rounded-lg   ml-[29px]'>
-                            <div className="pl-8 lg:py-6 pt-6 pb-[75px] pr-4">
-                                <div>
-                                    <label className="text-black text-2xl font-semibold">
-                                        Paket Aktif
-                                    </label>
-                                </div>
-                                <TablePaketAktif
-                                    nomor={1}
-                                    nama_paket={'Umroh Dream eksklusif Jaya Abadi anjay bang daffa'}
-                                    harga_paket={'RP.39.000.000,00'}
-                                    kuota={40}
-                                    terdaftar={34}
-                                    tersedia={100}
-                                />
-                                <TablePaketAktif
-                                    nomor={2}
-                                    nama_paket={'Umroh Dream bersama artis acep'}
-                                    harga_paket={'RP.79.000.000,00'}
-                                    kuota={4}
-                                    terdaftar={2}
-                                    tersedia={131}
-                                />
-                                <TablePaketAktif
-                                    nomor={3}
-                                    nama_paket={'Umroh Bersama Tiktokers tio'}
-                                    harga_paket={'RP.109.000.000,00'}
-                                    kuota={3}
-                                    terdaftar={211}
-                                    tersedia={3}
-                                />
-                                <TablePaketAktif
-                                    nomor={4}
-                                    nama_paket={'Umroh Bersama Tiktokers tio'}
-                                    harga_paket={'RP.109.000.000,00'}
-                                    kuota={3}
-                                    terdaftar={211}
-                                    tersedia={3}
-                                />
-                                <div className="grid grid-cols-1 h-7 px-12 pt-20 justify-items-center">
-                                    <Pagination currentPage={1} totalPages={5} />
-                                </div>
+                        <div className='flex flex-col bg-white w-full lg:h-[750px] h-full shadow-xl rounded-lg px-8 pt-6 lg:pb-8 pb-[202px]  ml-[29px]'>
+
+                            <div>
+                                <label className="text-black text-2xl font-semibold">
+                                    Paket Aktif
+                                </label>
                             </div>
+                            <TablePaketAktif
+                                nomor={1}
+                                nama_paket={'Umroh Dream eksklusif Jaya Abadi anjay bang daffa'}
+                                harga_paket={'RP.39.000.000,00'}
+                                kuota={40}
+                                terdaftar={34}
+                                tersedia={100}
+                            />
+                            <TablePaketAktif
+                                nomor={2}
+                                nama_paket={'Umroh Dream bersama artis acep'}
+                                harga_paket={'RP.79.000.000,00'}
+                                kuota={4}
+                                terdaftar={2}
+                                tersedia={131}
+                            />
+                            <TablePaketAktif
+                                nomor={3}
+                                nama_paket={'Umroh Bersama Tiktokers tio'}
+                                harga_paket={'RP.109.000.000,00'}
+                                kuota={3}
+                                terdaftar={211}
+                                tersedia={3}
+                            />
+                            <TablePaketAktif
+                                nomor={4}
+                                nama_paket={'Umroh Bersama Tiktokers tio'}
+                                harga_paket={'RP.109.000.000,00'}
+                                kuota={3}
+                                terdaftar={211}
+                                tersedia={3}
+                            />
+                            <div className="grid grid-cols-1 h-7 px-12 pt-20 justify-items-center">
+                                <Pagination currentPage={1} totalPages={5} />
+                            </div>
+
 
                         </div>
                     </div>

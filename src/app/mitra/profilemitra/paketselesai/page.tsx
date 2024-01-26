@@ -20,7 +20,7 @@ function PaketSelesai() {
             <div className='h-screen w-screen grey px-[28px] py-[20px]  overflow-y-scroll' >
                 <div>
                     <div className='flex '>
-                        <div className='flex flex-col bg-white lg:w-5/12 w-4/12 lg:h-[650px] h-full shadow-xl rounded-lg px-8 pt-6 lg:pb-8 pb-12 ml-1  '>
+                        <div className='flex flex-col bg-white lg:w-5/12 w-4/12 lg:h-[650px] h-full shadow-xl rounded-lg px-8 pt-6 lg:pb-8 pb-12 ml-1 '>
 
                             <div className="flex flex-wrap justify-items-center justify-center">
                                 {
@@ -93,7 +93,7 @@ function PaketSelesai() {
                             </div>
                         </div>
 
-                        <div className='flex flex-col bg-white w-full lg:h-[750px] h-full shadow-xl rounded-lg pl-8 lg:py-6 pt-6 pb-[75px] lg:pr-5 pr-3 ml-[29px]'>
+                        <div className='flex flex-col bg-white w-full lg:h-[750px] h-full shadow-xl rounded-lg px-8 pt-6 lg:pb-8 pb-[202px]  ml-[29px]'>
                             <div>
                                 <label className="text-black text-2xl font-semibold">
                                     Paket Selesai
