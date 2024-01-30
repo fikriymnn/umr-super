@@ -45,7 +45,7 @@ function Mitra() {
             <div className='h-screen w-screen grey px-[28px] py-[20px]  overflow-y-scroll' >
                 <div>
                     <div className='flex '>
-                        <div className='flex flex-col bg-white w-full h-full shadow-xl rounded-lg px-8 lg:pb-20 pb-11 pt-8'>
+                        <div className='flex flex-col bg-white w-full h-full shadow-xl rounded-lg px-8 lg:pb-12 pb-11 pt-8'>
 
                             <div>
                                 <label className="text-black text-2xl font-semibold">
@@ -98,9 +98,16 @@ function Mitra() {
                                     order_aktif={2}
                                     order_selesai={28}
                                 />
+                                <Tablelistmitra
+                                    foto_profile={'/profil.jpeg'}
+                                    nama_mitra={'Noviar Haji dan Umroh asdas asdasdas asdas'}
+                                    paket_aktif={4}
+                                    order_aktif={2}
+                                    order_selesai={28}
+                                />
 
                             </div>
-                            <div className="grid grid-cols-1 h-7 px-12 pt-20 justify-items-center">
+                            <div className="grid grid-cols-1 h-7 px-12 pt-6 justify-items-center">
                                 <Pagination currentPage={1} totalPages={5} />
                             </div>
                         </div>

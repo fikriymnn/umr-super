@@ -10,28 +10,37 @@ export default function SideBar({
   dashboard,
   mitra,
   user,
+  order,
 }: {
   dashboard?: any;
   mitra?: any;
   user?: any;
+  order?: any;
 }) {
   const { push } = useRouter();
   const [bar, setBar] = useState(1);
+  const [bar1, setBar1] = useState(1);
   const [packagebar, setPackagebar] = useState(0);
   const togglePackagebar = () => {
     setPackagebar((prevValue) => (prevValue === 0 ? 1 : 0));
   };
   const [orderbar, setOrderbar] = useState(0);
-  const toggleOrderbar = () => {
-    setOrderbar((prevValue) => (prevValue === 0 ? 1 : 0));
+  const [orderbar1, setOrderbar1] = useState(0);
+
+  // const toggleOrderbar = () => {
+  //   setOrderbar((prevValue) => (prevValue === 0 ? 1 : 0));
+  // };
+  const toggleOrderbar1 = () => {
+    setOrderbar1((prevValue) => (prevValue === 0 ? 1 : 0));
   };
   const [accountbar, setAccountbar] = useState(0);
-  const toggleAccountbar = () => {
-    setAccountbar((prevValue) => (prevValue === 0 ? 1 : 0));
-  };
+  // const toggleAccountbar = () => {
+  //   setAccountbar((prevValue) => (prevValue === 0 ? 1 : 0));
+  // };
   const toggleBar = () => {
     setBar((prevBar) => (prevBar === 1 ? 0 : 1));
   };
+
 
   // async function submitLogout(e: any) {
   //   e.preventDefault();
@@ -122,9 +131,6 @@ export default function SideBar({
                 </a>
               </div>
             </div>
-
-
-
             <div className="flex mt-1 ">
               <div className={`w-full  rounded-[8px] ${orderbar === 1 ? 'pb-1 px-1 yellow ' : ''} duration-100`}>
 
@@ -230,6 +236,84 @@ export default function SideBar({
                 </div>
               </div>
             </div>
+            <div className="flex mt-1">
+              <div className={`w-full  rounded-[8px] ${orderbar1 === 1 ? 'pb-1 px-1 yellow ' : ''} duration-100`}>
+
+                <div className={`${bar == 1
+                  ? "justify-start items-center"
+                  : " justify-center items-center"
+                  } w-full  h-[40px] flex my-1  ps-1 gap-1
+                            rounded-md hover:bg-amber-400 shrink-0 hover:text-white duration-200 ease-in-out ${order}`}>
+                  <button onClick={toggleOrderbar1} className="w-5">
+                    <div >
+
+                      <svg className={`${orderbar1 === 1 ? 'rotate-90 ' : ''} w-full duration-100 `} width="9" height="9" viewBox="0 0 11 14" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11 7L0.499999 13.0622L0.5 0.937822L11 7Z" fill="currentColor" />
+                      </svg>
+
+                    </div>
+                  </button>
+
+                  <a href="/order" className="w-full">
+                    <button
+
+                    >
+                      {bar === 0 ? (
+                        <div className="w-10 flex  justify-center justify-items-center pr-[5px] pt-[4px]">
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 18"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M15 8H14C13.7348 8 13.4804 8.10536 13.2929 8.29289C13.1054 8.48043 13 8.73478 13 9C13 9.26522 13.1054 9.51957 13.2929 9.70711C13.4804 9.89464 13.7348 10 14 10H15C15.2652 10 15.5196 9.89464 15.7071 9.70711C15.8946 9.51957 16 9.26522 16 9C16 8.73478 15.8946 8.48043 15.7071 8.29289C15.5196 8.10536 15.2652 8 15 8ZM15 12H14C13.7348 12 13.4804 12.1054 13.2929 12.2929C13.1054 12.4804 13 12.7348 13 13C13 13.2652 13.1054 13.5196 13.2929 13.7071C13.4804 13.8946 13.7348 14 14 14H15C15.2652 14 15.5196 13.8946 15.7071 13.7071C15.8946 13.5196 16 13.2652 16 13C16 12.7348 15.8946 12.4804 15.7071 12.2929C15.5196 12.1054 15.2652 12 15 12ZM9 6H15C15.2652 6 15.5196 5.89464 15.7071 5.70711C15.8946 5.51957 16 5.26522 16 5C16 4.73478 15.8946 4.48043 15.7071 4.29289C15.5196 4.10536 15.2652 4 15 4H9C8.73478 4 8.48043 4.10536 8.29289 4.29289C8.10536 4.48043 8 4.73478 8 5C8 5.26522 8.10536 5.51957 8.29289 5.70711C8.48043 5.89464 8.73478 6 9 6ZM19 0H5C4.73478 0 4.48043 0.105357 4.29289 0.292893C4.10536 0.48043 4 0.734784 4 1V4H1C0.734784 4 0.48043 4.10536 0.292893 4.29289C0.105357 4.48043 0 4.73478 0 5V15C0 15.7956 0.316071 16.5587 0.87868 17.1213C1.44129 17.6839 2.20435 18 3 18H16C17.0609 18 18.0783 17.5786 18.8284 16.8284C19.5786 16.0783 20 15.0609 20 14V1C20 0.734784 19.8946 0.48043 19.7071 0.292893C19.5196 0.105357 19.2652 0 19 0ZM4 15C4 15.2652 3.89464 15.5196 3.70711 15.7071C3.51957 15.8946 3.26522 16 3 16C2.73478 16 2.48043 15.8946 2.29289 15.7071C2.10536 15.5196 2 15.2652 2 15V6H4V15ZM18 14C18 14.5304 17.7893 15.0391 17.4142 15.4142C17.0391 15.7893 16.5304 16 16 16H5.82C5.93642 15.6793 5.9973 15.3411 6 15V2H18V14ZM9 10H10C10.2652 10 10.5196 9.89464 10.7071 9.70711C10.8946 9.51957 11 9.26522 11 9C11 8.73478 10.8946 8.48043 10.7071 8.29289C10.5196 8.10536 10.2652 8 10 8H9C8.73478 8 8.48043 8.10536 8.29289 8.29289C8.10536 8.48043 8 8.73478 8 9C8 9.26522 8.10536 9.51957 8.29289 9.70711C8.48043 9.89464 8.73478 10 9 10ZM9 14H10C10.2652 14 10.5196 13.8946 10.7071 13.7071C10.8946 13.5196 11 13.2652 11 13C11 12.7348 10.8946 12.4804 10.7071 12.2929C10.5196 12.1054 10.2652 12 10 12H9C8.73478 12 8.48043 12.1054 8.29289 12.2929C8.10536 12.4804 8 12.7348 8 13C8 13.2652 8.10536 13.5196 8.29289 13.7071C8.48043 13.8946 8.73478 14 9 14Z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                        </div>
+                      ) : (
+                        <div className="flex gap-[15px] justify-center items-center  ">
+                          <div className="flex gap-2">
+
+                            <div className=" ">
+                              <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 20 18"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M15 8H14C13.7348 8 13.4804 8.10536 13.2929 8.29289C13.1054 8.48043 13 8.73478 13 9C13 9.26522 13.1054 9.51957 13.2929 9.70711C13.4804 9.89464 13.7348 10 14 10H15C15.2652 10 15.5196 9.89464 15.7071 9.70711C15.8946 9.51957 16 9.26522 16 9C16 8.73478 15.8946 8.48043 15.7071 8.29289C15.5196 8.10536 15.2652 8 15 8ZM15 12H14C13.7348 12 13.4804 12.1054 13.2929 12.2929C13.1054 12.4804 13 12.7348 13 13C13 13.2652 13.1054 13.5196 13.2929 13.7071C13.4804 13.8946 13.7348 14 14 14H15C15.2652 14 15.5196 13.8946 15.7071 13.7071C15.8946 13.5196 16 13.2652 16 13C16 12.7348 15.8946 12.4804 15.7071 12.2929C15.5196 12.1054 15.2652 12 15 12ZM9 6H15C15.2652 6 15.5196 5.89464 15.7071 5.70711C15.8946 5.51957 16 5.26522 16 5C16 4.73478 15.8946 4.48043 15.7071 4.29289C15.5196 4.10536 15.2652 4 15 4H9C8.73478 4 8.48043 4.10536 8.29289 4.29289C8.10536 4.48043 8 4.73478 8 5C8 5.26522 8.10536 5.51957 8.29289 5.70711C8.48043 5.89464 8.73478 6 9 6ZM19 0H5C4.73478 0 4.48043 0.105357 4.29289 0.292893C4.10536 0.48043 4 0.734784 4 1V4H1C0.734784 4 0.48043 4.10536 0.292893 4.29289C0.105357 4.48043 0 4.73478 0 5V15C0 15.7956 0.316071 16.5587 0.87868 17.1213C1.44129 17.6839 2.20435 18 3 18H16C17.0609 18 18.0783 17.5786 18.8284 16.8284C19.5786 16.0783 20 15.0609 20 14V1C20 0.734784 19.8946 0.48043 19.7071 0.292893C19.5196 0.105357 19.2652 0 19 0ZM4 15C4 15.2652 3.89464 15.5196 3.70711 15.7071C3.51957 15.8946 3.26522 16 3 16C2.73478 16 2.48043 15.8946 2.29289 15.7071C2.10536 15.5196 2 15.2652 2 15V6H4V15ZM18 14C18 14.5304 17.7893 15.0391 17.4142 15.4142C17.0391 15.7893 16.5304 16 16 16H5.82C5.93642 15.6793 5.9973 15.3411 6 15V2H18V14ZM9 10H10C10.2652 10 10.5196 9.89464 10.7071 9.70711C10.8946 9.51957 11 9.26522 11 9C11 8.73478 10.8946 8.48043 10.7071 8.29289C10.5196 8.10536 10.2652 8 10 8H9C8.73478 8 8.48043 8.10536 8.29289 8.29289C8.10536 8.48043 8 8.73478 8 9C8 9.26522 8.10536 9.51957 8.29289 9.70711C8.48043 9.89464 8.73478 10 9 10ZM9 14H10C10.2652 14 10.5196 13.8946 10.7071 13.7071C10.8946 13.5196 11 13.2652 11 13C11 12.7348 10.8946 12.4804 10.7071 12.2929C10.5196 12.1054 10.2652 12 10 12H9C8.73478 12 8.48043 12.1054 8.29289 12.2929C8.10536 12.4804 8 12.7348 8 13C8 13.2652 8.10536 13.5196 8.29289 13.7071C8.48043 13.8946 8.73478 14 9 14Z"
+                                  fill="currentColor"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                          <div className="flex items-center justify-center  font-[600] text-[18px] translate-y-[1px]">
+                            <p>Order</p>
+                          </div>
+                        </div>
+                      )}
+                    </button>
+                  </a>
+                </div>
+                {orderbar1 === 1 && (
+                  <>
+                    <div className="flex flex-col ms-6 grey rounded-md py-2 px-3 font-medium">
+                      <a className="hover:text-[#E3B02B]" href="">Belum Bayar</a>
+                      <a className="hover:text-[#E3B02B]" href="">Diproses</a>
+                      <a className="hover:text-[#E3B02B]" href="">Sudah Bayar</a>
+                      <a className="hover:text-[#E3B02B]" href="">Selesai</a>
+                    </div>
+                  </>
+                )
+                }
+
+              </div>
+            </div>
 
           </div>
           <div>
@@ -264,7 +348,7 @@ export default function SideBar({
               ) : (
                 <div
                   className=" bg-red-600 text-white p-2 pe-3 shrink-0 rounded-md flex gap-2 items-center justify-center 
-                  w-[155px] h-[50px]"
+                        w-[155px] h-[50px]"
                 >
                   <div className="w-8">
                     <svg
@@ -296,5 +380,6 @@ export default function SideBar({
         </div>
       </div>
     </div>
+
   );
 }

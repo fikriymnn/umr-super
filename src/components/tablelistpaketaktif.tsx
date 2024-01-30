@@ -20,7 +20,6 @@ function TablePaketAktif(
                                 <div className='line-clamp-1'>
                                     {nama_paket}
                                 </div>
-
                                 <div>
                                     <label className='text-yellow-600 lg:text-xl text-lg font-semibold'>
                                         {harga_paket}
