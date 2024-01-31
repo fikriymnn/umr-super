@@ -303,10 +303,9 @@ export default function SideBar({
                 {orderbar1 === 1 && (
                   <>
                     <div className="flex flex-col ms-6 grey rounded-md py-2 px-3 font-medium">
-                      <a className="hover:text-[#E3B02B]" href="">Belum Bayar</a>
-                      <a className="hover:text-[#E3B02B]" href="">Diproses</a>
-                      <a className="hover:text-[#E3B02B]" href="">Sudah Bayar</a>
-                      <a className="hover:text-[#E3B02B]" href="">Selesai</a>
+                      <a className="hover:text-[#E3B02B]" href="/order/belumbayar">Belum Bayar</a>
+                      <a className="hover:text-[#E3B02B]" href="/order/diproses">Diproses</a>
+                      <a className="hover:text-[#E3B02B]" href="/order/sudahbayar">Sudah Bayar</a>
                     </div>
                   </>
                 )
