@@ -75,6 +75,16 @@ function DetailOrder() {
                                     RP.39.000.000,00
                                 </label>
                             </div>
+                            <div className="mt-3">
+                                <label className="text-neutral-700 text-base font-medium">
+                                    Status Keberangkatan
+                                </label>
+                            </div>
+                            <div>
+                                <label className="text-black lg:text-2xl text-xl font-semibold">
+                                    Belum Berangkat
+                                </label>
+                            </div>
                             <div className="mt-7">
                                 <button className="px-2 py-2 bg-amber-400 rounded-md font-semibold text-white">
                                     Accept
