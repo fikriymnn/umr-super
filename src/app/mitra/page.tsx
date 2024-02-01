@@ -86,24 +86,24 @@ function Mitra() {
                                 />
                                 <Tablelistmitra
                                     foto_profile={'/profil.jpeg'}
-                                    nama_mitra={'Noviar Haji dan Umroh asdas asdasdas asdas'}
+                                    nama_mitra={'Daffa PT Umroh serius'}
                                     paket_aktif={4}
                                     order_aktif={2}
                                     order_selesai={28}
                                 />
                                 <Tablelistmitra
-                                    foto_profile={'/profil.jpeg'}
-                                    nama_mitra={'Noviar Haji dan Umroh asdas asdasdas asdas'}
+                                    foto_profile={'/kaaba.jpg'}
+                                    nama_mitra={'Acep becanda Serius'}
                                     paket_aktif={4}
                                     order_aktif={2}
                                     order_selesai={28}
                                 />
                                 <Tablelistmitra
-                                    foto_profile={'/profil.jpeg'}
-                                    nama_mitra={'Noviar Haji dan Umroh asdas asdasdas asdas'}
-                                    paket_aktif={4}
+                                    foto_profile={'/logo.png'}
+                                    nama_mitra={'Noviar Haji'}
                                     order_aktif={2}
                                     order_selesai={28}
+                                    paket_aktif={2}
                                 />
 
                             </div>
