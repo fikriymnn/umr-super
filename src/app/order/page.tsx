@@ -12,8 +12,8 @@ function Order() {
                     <div className="relative flex gap-3 w-5/12 ">
 
                         <input type="text"
-                            className="pl-10 pr-4 py-1 border rounded-md  text-black bg-slate-200 h-full px-2  w-full"
-                            placeholder="Cari Pesanan" />
+                            className="pl-10 pr-4 py-2 border rounded-md  text-black bg-neutral-200 h-full px-2  w-full"
+                            placeholder="Cari Order" />
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <svg
                                 width="14"
@@ -42,48 +42,56 @@ function Order() {
                     </div>
                     <div className="overflow-x-scroll">
                         <div className="h-full min-w-full py-3 flex gap-3">
-                            <div className="flex gap-2 w-6/12 ">
+                            <div className="flex gap-2 w-full ">
                                 <div className="text-[20px] font-semibold w-[35px] ">No</div>
                                 <div className="text-[20px] font-semibold w-8/12 ">
                                     Nama Pemesan
                                 </div>
-                                <div className="w-4/12 text-[20px] font-semibold ">
+                                <div className="w-5/12 text-[20px] font-semibold ">
                                     Jumlah
                                 </div>
-                            </div>
-                            <div className="flex gap-2 w-full justify-between">
-                                <div className="w-4/12  text-[20px] font-semibold ">Paket</div>
-                                <div className="w-4/12  text-[20px] font-semibold ">Mitra</div>
-                                <div className="w-3/12  flex gap-3 text-[20px] font-semibold">
+                                <div className="w-full  text-[20px] font-semibold ">Paket</div>
+                                <div className="w-full  text-[20px] font-semibold ">Mitra</div>
+                                <div className="w-full  flex gap-3 text-[20px] font-semibold">
                                     Status
                                 </div>
                             </div>
+
                         </div>
                         <div className="max-h-[500px] overflow-y-scroll border-y-2 border-slate-400 py-3">
                             <TableOrder
                                 no={"1"}
-                                name={"Acep wahyu Kurna"}
+                                name={"Rully bener"}
                                 jumlah={"4"}
                                 paket={"Paket umroh untuk kalangan atas"}
-                                mitra={"PT. Acep Kaya anjay sejahtera sss"} />
+                                mitra={"PT. Acep Kaya anjay sejahtera sss"}
+                                status={"Sudah Bayar"}
+
+                            />
                             <TableOrder
                                 no={"2"}
-                                name={"Acep wahyu Kurna"}
+                                name={"Tio ini iya"}
                                 jumlah={"5"}
                                 paket={"Paket umroh untuk kalangan atas"}
-                                mitra={"PT. Acep Kaya anjay sejahtera sss"} />
+                                mitra={"PT. Acep Kaya anjay sejahtera sss"}
+                                status={"Diproses"}
+                            />
                             <TableOrder
                                 no={"3"}
-                                name={"Acep wahyu Kurna"}
+                                name={"Acep salah"}
                                 jumlah={"9"}
                                 paket={"Paket umroh untuk kalangan atas"}
-                                mitra={"PT. Acep Kaya anjay sejahtera sss"} />
+                                mitra={"PT. Acep Kaya anjay sejahtera sss"}
+                                status={"Belum Bayar"}
+                            />
                             <TableOrder
                                 no={"4"}
-                                name={"Acep wahyu Kurna"}
+                                name={"Daffa ini bukan"}
                                 jumlah={"10"}
                                 paket={"Paket umroh untuk kalangan atas"}
-                                mitra={"PT. Acep Kaya anjay sejahtera sss"} />
+                                mitra={"PT. Acep Kaya anjay sejahtera sss"}
+                                status={'Sudah Bayar'}
+                            />
                         </div>
                     </div>
                 </div>

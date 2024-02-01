@@ -1,4 +1,4 @@
-import TableOrderBelumBayar from "@/components/order/tableOrderBelumBayar";
+import TableOrder from "@/components/order/tableOrder";
 import SideBar from "@/components/sideBar";
 import React from "react";
 
@@ -12,8 +12,8 @@ function BelumBayar() {
                     <div className="relative flex gap-3 w-5/12 ">
 
                         <input type="text"
-                            className="pl-10 pr-4 py-1 border rounded-md  text-black bg-slate-200 h-full px-2  w-full"
-                            placeholder="Cari Pesanan" />
+                            className="pl-10 pr-4 py-2 border rounded-md  text-black bg-neutral-200 h-full px-2  w-full"
+                            placeholder="Cari Order" />
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <svg
                                 width="14"
@@ -60,18 +60,20 @@ function BelumBayar() {
                             </div>
                         </div>
                         <div className="max-h-[500px] overflow-y-scroll border-y-2 border-slate-400 py-3">
-                            <TableOrderBelumBayar
+                            <TableOrder
                                 no={"1"}
-                                name={"Acep wahyu Kurna"}
+                                name={"Acep iya"}
                                 jumlah={"4"}
                                 paket={"Paket umroh untuk kalangan atas"}
-                                mitra={"PT. Acep Kaya anjay sejahtera sss"} />
-                            <TableOrderBelumBayar
+                                mitra={"PT. Acep Kaya anjay sejahtera sss"}
+                                status={"Belum Bayar"} />
+                            <TableOrder
                                 no={"2"}
-                                name={"Acep wahyu Kurna"}
+                                name={"Acep bukan"}
                                 jumlah={"5"}
                                 paket={"Paket umroh untuk kalangan atas"}
-                                mitra={"PT. Acep Kaya anjay sejahtera sss"} />
+                                mitra={"PT. Acep Kaya anjay sejahtera sss"}
+                                status={"Belum Bayar"} />
 
                         </div>
                     </div>
