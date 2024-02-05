@@ -1,8 +1,23 @@
 import TableOrder from "@/components/order/tableOrder";
 import SideBar from "@/components/sideBar";
 import React from "react";
+import axios from "axios";
+async function GetDataOrder() {
+    let data;
+    try {
+        const res = await axios.get(
+            `http://localhost:9006/api/order/:id?skip=0&limit=100`
+        );
+        data = res.data.data;
 
-function Order() {
+
+    } catch (error) {
+        data = null;
+    }
+    return data;
+}
+async function Order() {
+    const DataOrder = await GetDataOrder();
     return (
         <div className="flex ">
             <SideBar order=" text-white bg-[#E3B02B]" />
@@ -92,6 +107,22 @@ function Order() {
                                 mitra={"PT. Acep Kaya anjay sejahtera sss"}
                                 status={'Sudah Bayar'}
                             />
+                            {DataOrder == null ? (
+                                <div></div>
+                            ) : (
+                                DataOrder.map((data: any, index: any, i: number) => {
+                                    return (
+                                        <>
+                                            <TableOrder
+                                                no={i + 1}
+                                                name={data.nama_lengkap}
+                                                jumlah={data.jamaah}
+                                                paket={undefined}
+                                                mitra={undefined}
+                                                status={data.status} />
+                                        </>
+                                    )
+                                }))}
                         </div>
                     </div>
                 </div>

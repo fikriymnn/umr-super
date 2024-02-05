@@ -3,8 +3,23 @@ import SideBar from "@/components/sideBar";
 import React, { useEffect, useState } from 'react'
 import TableUser from "@/components/tableuser";
 import Pagination from "@/components/pagination";
+import axios from "axios";
+async function GetDataUser() {
+    let data;
+    try {
+        const res = await axios.get(
+            `http://localhost:9006/api/allUser:id?skip=0&limit=100`
+        );
+        data = res.data.data;
 
-function DetailUser() {
+
+    } catch (error) {
+        data = null;
+    }
+    return data;
+}
+async function DetailUser() {
+    const DataUser = await GetDataUser();
     return (
         <div className='flex'>
             <SideBar user="text-white bg-[#E3B02B]" />
@@ -53,12 +68,21 @@ function DetailUser() {
                                     no_wa={'0857575757'}
                                     email_user={'emailace3p@email.com'}
                                 />
-                                <TableUser
-                                    foto_profile={'/logo.png'}
-                                    nama_user={'Tio Sendi rissss aaaaaaaa'}
-                                    no_wa={'0857575757'}
-                                    email_user={'emailace3p@email.com'}
-                                />
+                                {DataUser == null ? (
+                                    <div></div>
+                                ) : (
+                                    DataUser.map((data: any, index: any) => {
+                                        return (
+                                            <>
+                                                <TableUser
+                                                    key={index}
+                                                    foto_profile={data.foto_profil}
+                                                    nama_user={data.nama_lengkap}
+                                                    no_wa={data.no_whatsapp}
+                                                    email_user={data.email} />
+                                            </>
+                                        )
+                                    }))}
                             </div>
                             <div className="grid grid-cols-1 h-7 px-12 pt-10 justify-items-center">
                                 <Pagination currentPage={1} totalPages={5} />

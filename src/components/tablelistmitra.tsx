@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from 'next/link';
 
 function Tablelistmitra(
-    { foto_profile, nama_mitra, paket_aktif, order_aktif, order_selesai }: { foto_profile: any, nama_mitra: any, paket_aktif: any, order_aktif: any, order_selesai: any }
+    { id, foto_profile, nama_mitra, paket_aktif, order_aktif, order_selesai }: { id: any, foto_profile: any, nama_mitra: any, paket_aktif: any, order_aktif: any, order_selesai: any }
 ) {
     return (
         <div className='flex'>
@@ -25,7 +25,7 @@ function Tablelistmitra(
 
                         <div className='flex-col w-2/12 gap-3 items-center lg:py-1 pt-2'>
                             <button className='lg:w-24 lg:h-7 w-14 h-5 bg-amber-400 rounded-md text-center lg:text-base text-xs text-white font-medium'>
-                                <Link href='/mitra/profilemitra'>
+                                <Link href={`/mitra/profilemitra/${id}`}>
                                     Profile
                                 </Link>
                             </button>
