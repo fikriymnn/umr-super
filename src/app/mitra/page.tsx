@@ -6,6 +6,8 @@ import Image from "next/image";
 import Tablelistmitra from "@/components/tablelistmitra";
 import Pagination from "@/components/pagination";
 import axios from "axios";
+
+
 async function GetDataMitra() {
     let data;
     try {
@@ -62,13 +64,6 @@ async function Mitra() {
                                 </div>
                             </div>
                             <div>
-                                <Tablelistmitra
-                                    foto_profile={"kaaba.jpg"}
-                                    nama_mitra={"PT acep BENER SERIUS INI"}
-                                    paket_aktif={3}
-                                    order_aktif={3}
-                                    order_selesai={4}
-                                />
                                 {DataMitra == null ? (
                                     <div></div>
                                 ) : (
@@ -82,7 +77,7 @@ async function Mitra() {
                                                     order_aktif={data.order_aktif}
                                                     order_selesai={data.order_selesai}
                                                     key={index}
-                                                />
+                                                    id={data._id} />
                                             </>
                                         )
                                     }))}

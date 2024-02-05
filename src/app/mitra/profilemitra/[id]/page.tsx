@@ -3,69 +3,50 @@ import SideBar from "@/components/sideBar";
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import Image from "next/image";
-// import axios from 'axios';
+import axios from 'axios';
+import { useRouter } from "next/navigation";
 
-
-function ProfileMitra() {
-
-    const [dataMitra, setDataMitra] = useState<any>(null);
-    let id: any = "";
+function GetDataMitra({ params }: { params: any }) {
+    const [dataMitra, setdataMitra] = useState<any>(null);
     useEffect(() => {
-        // getuser();
-    });
+        getDetailPaket(params.id);
+    }, [params.id]);
 
-    // async function getuser() {
-    //     try {
-    //         const res = await axios.get("http://localhost:5000/api/user", { withCredentials: true });
-    //         if (res.data.success == true) {
-    //             getdetailuser(res.data.data._id)
-    //         }
-    //         id = res.data.data._id;
-    //     } catch (error: any) {
-    //         console.log(error.response);
-    //     }
-    // }
-    // async function getdetailuser(id: any) {
-    //     try {
-    //         const res = await axios.get(`http://localhost:5000/api/mitra/${id}`);
-    //         if (res.data.success == true) {
-    //             setDataMitra(res.data.data)
-    //         }
-    //         id = res.data.data._id;
-    //     } catch (error: any) {
-    //         console.log(error.response);
-    //     }
-    // }
-
+    async function getDetailPaket(idd: any) {
+        try {
+            const res = await axios.get(
+                `http://localhost:9006/api/mitra/${idd}`
+            );
+            if (res.data.success == true) {
+                setdataMitra(res.data.data);
+            }
+        } catch (error: any) {
+            console.log(error.response);
+        }
+    }
     return (
         <div className='flex'>
             <SideBar mitra="text-white bg-[#E3B02B]" />
             <div className='h-screen w-screen grey px-[28px] py-[20px]  overflow-y-scroll' >
-
                 <div>
-
                     <div className='flex '>
                         <div className='flex flex-col bg-white lg:w-5/12 w-6/12 h-full shadow-xl rounded-lg px-8 pt-6 lg:pb-9  pb-20'>
 
                             <div className="flex flex-wrap justify-items-center justify-center">
-                                {
-                                    // dataMitra == null ? <div className="shadow w-44 h-44 bg-zinc-300 rounded-full">
-
-                                    // </div> :
-                                    <Image
-                                        alt="logo1"
-                                        src={'/profil.jpeg'}
-                                        height={176}
-                                        width={176}
-                                        className="shadow lg:w-44 lg:h-44 w-28 h-28 bg-zinc-300 rounded-full"
+                                {dataMitra == null ? (
+                                    <div className="shadow w-44 h-44 bg-zinc-300 rounded-full"></div>
+                                ) : (
+                                    <img
+                                        src={dataMitra.foto_profil}
+                                        alt="Profil"
+                                        className="shadow w-44 h-44 bg-zinc-300 rounded-full "
                                     />
-                                }
-
+                                )}
                             </div>
+
                             <div>
                                 <label className="flex justify-items-center justify-center mt-[20px] text-black lg:text-2xl text-xl font-semibold  text-center">
-                                    {/* {dataMitra == null ? "" : dataMitra.nama_mitra} */}
-                                    Noviar Haji Dan Umroh
+                                    {dataMitra == null ? "" : dataMitra.nama_mitra}
                                 </label>
                             </div>
                             <div className='grid grid-cols-2 mt-11'>
@@ -191,8 +172,8 @@ function ProfileMitra() {
                             </div>
                             <div>
                                 <label className="w-60 h-7 lg:text-xl text-lg text-black  font-semibold">
-                                    {/* {dataMitra == null ? "" : dataMitra.nama_mitra} */}
-                                    Noviar Haji Dan Umroh
+                                    {dataMitra == null ? "" : dataMitra.nama_mitra}
+
                                 </label>
                             </div>
 
@@ -203,8 +184,8 @@ function ProfileMitra() {
                             </div>
                             <div>
                                 <label className="w-full h-7 lg:text-xl text-lg text-black  font-semibold">
-                                    {/* {dataMitra == null ? "" : dataMitra.nama_pt} */}
-                                    PT. Noviar Haji Dan Umroh
+                                    {dataMitra == null ? "" : dataMitra.nama_pt}
+
                                 </label>
                             </div>
 
@@ -215,8 +196,8 @@ function ProfileMitra() {
                             </div>
                             <div>
                                 <label className="w-full h-7 lg:text-xl text-lg text-black  font-semibold">
-                                    {/* {dataMitra == null ? "" : dataMitra.no_izin_umroh} */}
-                                    109820212
+                                    {dataMitra == null ? "" : dataMitra.no_izin_umroh}
+
                                 </label>
                             </div>
                             <div className='lg:mt-[24px] mt-4'>
@@ -226,8 +207,8 @@ function ProfileMitra() {
                             </div>
                             <div>
                                 <label className="w-full h-7 lg:text-xl text-lg text-black  font-semibold">
-                                    {/* {dataMitra == null ? "" : dataMitra.location} */}
-                                    Bandung
+                                    {dataMitra == null ? "" : dataMitra.location}
+
                                 </label>
                             </div>
                             <div className='lg:mt-[24px] mt-4'>
@@ -237,8 +218,8 @@ function ProfileMitra() {
                             </div>
                             <div>
                                 <label className="w-full h-7 lg:text-xl text-lg text-black  font-semibold">
-                                    {/* {dataMitra == null ? "" : dataMitra.email} */}
-                                    tio@mail.com
+                                    {dataMitra == null ? "" : dataMitra.email}
+
                                 </label>
                             </div>
                             <div className='lg:mt-[24px] mt-4'>
@@ -248,8 +229,8 @@ function ProfileMitra() {
                             </div>
                             <div>
                                 <label className="w-full h-7 lg:text-xl text-lg text-black  font-semibold">
-                                    {/* {dataMitra == null ? "" : dataMitra.website} */}
-                                    noviartio.com
+                                    {dataMitra == null ? "" : dataMitra.website}
+
                                 </label>
                             </div>
 
@@ -260,8 +241,7 @@ function ProfileMitra() {
                             </div>
                             <div>
                                 <label className="w-full h-7 lg:text-xl text-lg text-black  font-semibold">
-                                    {/* {dataMitra == null ? "" : dataMitra.rating}/5 */}
-                                    5/5
+                                    {dataMitra == null ? "" : dataMitra.rating}/5
                                 </label>
                             </div>
                         </div>
@@ -273,4 +253,4 @@ function ProfileMitra() {
     )
 }
 
-export default ProfileMitra
+export default GetDataMitra;
