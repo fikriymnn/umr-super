@@ -34,26 +34,11 @@ export default function SideBar({
     setOrderbar1((prevValue) => (prevValue === 0 ? 1 : 0));
   };
   const [accountbar, setAccountbar] = useState(0);
-  // const toggleAccountbar = () => {
-  //   setAccountbar((prevValue) => (prevValue === 0 ? 1 : 0));
-  // };
+
   const toggleBar = () => {
     setBar((prevBar) => (prevBar === 1 ? 0 : 1));
   };
 
-
-  // async function submitLogout(e: any) {
-  //   e.preventDefault();
-  //   try {
-  //     const response = await axios.get("http://localhost:5000/api/logout", {
-  //       withCredentials: true,
-  //     });
-  //     alert("logout success");
-  //     push("/login");
-  //   } catch (error: any) {
-  //     alert(error.response.data.message);
-  //   }
-  // }
   return (
     <div className="z-40 ">
       <div

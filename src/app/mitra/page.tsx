@@ -3,42 +3,25 @@ import SideBar from "@/components/sideBar";
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import Image from "next/image";
-// import axios from 'axios';
 import Tablelistmitra from "@/components/tablelistmitra";
 import Pagination from "@/components/pagination";
+import axios from "axios";
+async function GetDataMitra() {
+    let data;
+    try {
+        const res = await axios.get(
+            `http://localhost:9006/api/mitra?skip=0&limit=100`
+        );
+        data = res.data.data;
 
 
-function Mitra() {
-
-    const [dataMitra, setDataMitra] = useState<any>(null);
-    let id: any = "";
-    useEffect(() => {
-        // getuser();
-    });
-
-    // async function getuser() {
-    //     try {
-    //         const res = await axios.get("http://localhost:5000/api/user", { withCredentials: true });
-    //         if (res.data.success == true) {
-    //             getdetailuser(res.data.data._id)
-    //         }
-    //         id = res.data.data._id;
-    //     } catch (error: any) {
-    //         console.log(error.response);
-    //     }
-    // }
-    // async function getdetailuser(id: any) {
-    //     try {
-    //         const res = await axios.get(`http://localhost:5000/api/mitra/${id}`);
-    //         if (res.data.success == true) {
-    //             setDataMitra(res.data.data)
-    //         }
-    //         id = res.data.data._id;
-    //     } catch (error: any) {
-    //         console.log(error.response);w
-    //     }
-    // }
-
+    } catch (error) {
+        data = null;
+    }
+    return data;
+}
+async function Mitra() {
+    const DataMitra = await GetDataMitra();
     return (
         <div className='flex'>
             <SideBar mitra="text-white bg-[#E3B02B]" />
@@ -48,9 +31,18 @@ function Mitra() {
                         <div className='flex flex-col bg-white w-full h-full shadow-xl rounded-lg px-8 lg:pb-12 pb-11 pt-8'>
 
                             <div>
-                                <label className="text-black text-2xl font-semibold">
-                                    Mitra Terdaftar
-                                </label>
+                                <div className="grid grid-cols-2">
+                                    <label className=" text-black text-2xl font-semibold">
+                                        Mitra Terdaftar
+                                    </label>
+                                    <div className=" pl-[400px]">
+                                        <button className="w-40 h-8 bg-amber-400 rounded-md text-center text-base text-white font-medium">
+                                            <Link href='/mitra/tambahmitra'>
+                                                Tambah Mitra
+                                            </Link>
+                                        </button>
+                                    </div>
+                                </div>
                                 <div className="relative flex gap-3 w-6/12 py-2">
                                     <input type="text"
                                         className="pl-10 pr-4 py-2 border rounded-md  text-black bg-neutral-200 h-full px-2  w-full"
@@ -71,40 +63,29 @@ function Mitra() {
                             </div>
                             <div>
                                 <Tablelistmitra
-                                    foto_profile={'/logo.png'}
-                                    nama_mitra={'Acep Rayahu Travel'}
-                                    paket_aktif={5}
-                                    order_aktif={18}
-                                    order_selesai={12}
+                                    foto_profile={"kaaba.jpg"}
+                                    nama_mitra={"PT acep BENER SERIUS INI"}
+                                    paket_aktif={3}
+                                    order_aktif={3}
+                                    order_selesai={4}
                                 />
-                                <Tablelistmitra
-                                    foto_profile={'/kaaba.jpg'}
-                                    nama_mitra={'Tio Jaya Abadi Travel  asdasdas asdasda'}
-                                    paket_aktif={6}
-                                    order_aktif={20}
-                                    order_selesai={32}
-                                />
-                                <Tablelistmitra
-                                    foto_profile={'/profil.jpeg'}
-                                    nama_mitra={'Daffa PT Umroh serius'}
-                                    paket_aktif={4}
-                                    order_aktif={2}
-                                    order_selesai={28}
-                                />
-                                <Tablelistmitra
-                                    foto_profile={'/kaaba.jpg'}
-                                    nama_mitra={'Acep becanda Serius'}
-                                    paket_aktif={4}
-                                    order_aktif={2}
-                                    order_selesai={28}
-                                />
-                                <Tablelistmitra
-                                    foto_profile={'/logo.png'}
-                                    nama_mitra={'Noviar Haji'}
-                                    order_aktif={2}
-                                    order_selesai={28}
-                                    paket_aktif={2}
-                                />
+                                {DataMitra == null ? (
+                                    <div></div>
+                                ) : (
+                                    DataMitra.map((data: any, index: any) => {
+                                        return (
+                                            <>
+                                                <Tablelistmitra
+                                                    foto_profile={data.foto_profil}
+                                                    nama_mitra={data.nama_mitra}
+                                                    paket_aktif={data.paket_aktif}
+                                                    order_aktif={data.order_aktif}
+                                                    order_selesai={data.order_selesai}
+                                                    key={index}
+                                                />
+                                            </>
+                                        )
+                                    }))}
 
                             </div>
                             <div className="grid grid-cols-1 h-7 px-12 pt-6 justify-items-center">

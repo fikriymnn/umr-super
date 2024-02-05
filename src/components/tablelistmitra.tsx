@@ -10,7 +10,7 @@ function Tablelistmitra(
             <div className='flex w-screen h-full overflow-y-scroll py-2 '>
                 <div className='flex flex-col gap-3 w-7/12 bg-neutral-200 rounded-md shadow-lg lg:py-[8px] pt-2 px-[15px] relative'>
                     <div className='flex'>
-                        <Image
+                        <img
                             alt="logo1"
                             src={foto_profile}
                             height={196}
@@ -63,6 +63,7 @@ function Tablelistmitra(
                                 Order Selesai
                             </label>
                         </div>
+
                     </div>
                 </div>
             </div>
