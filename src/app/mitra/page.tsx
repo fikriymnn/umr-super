@@ -1,7 +1,6 @@
-"use client"
 import SideBar from "@/components/sideBar";
 import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Image from "next/image";
 import Tablelistmitra from "@/components/tablelistmitra";
 import Pagination from "@/components/pagination";
@@ -15,11 +14,10 @@ async function GetDataMitra() {
             `http://localhost:9006/api/mitra?skip=0&limit=100`
         );
         data = res.data.data;
-
-
     } catch (error) {
         data = null;
     }
+
     return data;
 }
 async function Mitra() {
@@ -74,7 +72,7 @@ async function Mitra() {
                                                     foto_profile={data.foto_profil}
                                                     nama_mitra={data.nama_mitra}
                                                     paket_aktif={data.paket_aktif}
-                                                    order_aktif={data.order_aktif}
+                                                    order_aktif={data.order_berjalan}
                                                     order_selesai={data.order_selesai}
                                                     key={index}
                                                     id={data._id} />
