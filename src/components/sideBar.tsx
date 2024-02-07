@@ -2,6 +2,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import axios from "axios";
 
 import { useRouter } from "next/navigation";
 // import axios from "axios";
@@ -39,11 +40,29 @@ export default function SideBar({
     setBar((prevBar) => (prevBar === 1 ? 0 : 1));
   };
 
+  async function submitLogout(e: any) {
+    e.preventDefault();
+    try {
+      const response = await axios.get(
+        `${process.env.NEXT_PUBLIC_URL}/api/logout`,
+        {
+          withCredentials: true,
+        }
+      );
+      sessionStorage.removeItem("id_user");
+      alert("logout success");
+      push("/login");
+    } catch (error: any) {
+      alert(error.response.data.message);
+    }
+  }
+
   return (
     <div className="z-40 ">
       <div
-        className={`${bar == 1 ? " w-[252px] " : " w-[80px] "
-          } h-full flex flex-col text-black bg-white `}
+        className={`${
+          bar == 1 ? " w-[252px] " : " w-[80px] "
+        } h-full flex flex-col text-black bg-white `}
       >
         <div className={`w-full pt-5 pb-14 px-[16px]`}>
           <button className="w-full h-full" onClick={toggleBar}>
@@ -70,10 +89,11 @@ export default function SideBar({
               <div className="w-full">
                 <a href="/dashboard">
                   <button
-                    className={`${bar == 1
-                      ? "justify-start items-center"
-                      : " justify-center items-center"
-                      } w-full  h-[40px] flex my-1  mb-[10px] ps-3
+                    className={`${
+                      bar == 1
+                        ? "justify-start items-center"
+                        : " justify-center items-center"
+                    } w-full  h-[40px] flex my-1  mb-[10px] ps-3
                             rounded-md hover:bg-amber-400 shrink-0 hover:text-white duration-200 ease-in-out ${dashboard}`}
                   >
                     {bar === 0 ? (
@@ -117,16 +137,21 @@ export default function SideBar({
               </div>
             </div>
             <div className="flex mt-1 ">
-              <div className={`w-full  rounded-[8px] ${orderbar === 1 ? 'pb-1 px-1 yellow ' : ''} duration-100`}>
-
-                <div className={`${bar == 1
-                  ? "justify-start items-center"
-                  : " justify-center items-center"
+              <div
+                className={`w-full  rounded-[8px] ${
+                  orderbar === 1 ? "pb-1 px-1 yellow " : ""
+                } duration-100`}
+              >
+                <div
+                  className={`${
+                    bar == 1
+                      ? "justify-start items-center"
+                      : " justify-center items-center"
                   } w-full  h-[40px] flex my-1  ps-1 gap-1
-                            rounded-md hover:bg-amber-400 shrink-0 hover:text-white duration-200 ease-in-out ${mitra}`}>
+                            rounded-md hover:bg-amber-400 shrink-0 hover:text-white duration-200 ease-in-out ${mitra}`}
+                >
                   <a href="/mitra" className="w-full">
-                    <button
-                    >
+                    <button>
                       {bar === 0 ? (
                         <div className="flex w-10 justify-center justify-items-center pr-[3px] pt-[3px]">
                           <svg
@@ -134,7 +159,8 @@ export default function SideBar({
                             height="24"
                             viewBox="0 0 24 24"
                             fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
                             <path
                               d="M14 8H15C15.2652 8 15.5196 7.89464 15.7071 7.70711C15.8946 7.51957 16 7.26522 16 7C16 6.73478 15.8946 6.48043 15.7071 6.29289C15.5196 6.10536 15.2652 6 15 6H14C13.7348 6 13.4804 6.10536 13.2929 6.29289C13.1054 6.48043 13 6.73478 13 7C13 7.26522 13.1054 7.51957 13.2929 7.70711C13.4804 7.89464 13.7348 8 14 8ZM14 12H15C15.2652 12 15.5196 11.8946 15.7071 11.7071C15.8946 11.5196 16 11.2652 16 11C16 10.7348 15.8946 10.4804 15.7071 10.2929C15.5196 10.1054 15.2652 10 15 10H14C13.7348 10 13.4804 10.1054 13.2929 10.2929C13.1054 10.4804 13 10.7348 13 11C13 11.2652 13.1054 11.5196 13.2929 11.7071C13.4804 11.8946 13.7348 12 14 12ZM9 8H10C10.2652 8 10.5196 7.89464 10.7071 7.70711C10.8946 7.51957 11 7.26522 11 7C11 6.73478 10.8946 6.48043 10.7071 6.29289C10.5196 6.10536 10.2652 6 10 6H9C8.73478 6 8.48043 6.10536 8.29289 6.29289C8.10536 6.48043 8 6.73478 8 7C8 7.26522 8.10536 7.51957 8.29289 7.70711C8.48043 7.89464 8.73478 8 9 8ZM9 12H10C10.2652 12 10.5196 11.8946 10.7071 11.7071C10.8946 11.5196 11 11.2652 11 11C11 10.7348 10.8946 10.4804 10.7071 10.2929C10.5196 10.1054 10.2652 10 10 10H9C8.73478 10 8.48043 10.1054 8.29289 10.2929C8.10536 10.4804 8 10.7348 8 11C8 11.2652 8.10536 11.5196 8.29289 11.7071C8.48043 11.8946 8.73478 12 9 12ZM21 20H20V3C20 2.73478 19.8946 2.48043 19.7071 2.29289C19.5196 2.10536 19.2652 2 19 2H5C4.73478 2 4.48043 2.10536 4.29289 2.29289C4.10536 2.48043 4 2.73478 4 3V20H3C2.73478 20 2.48043 20.1054 2.29289 20.2929C2.10536 20.4804 2 20.7348 2 21C2 21.2652 2.10536 21.5196 2.29289 21.7071C2.48043 21.8946 2.73478 22 3 22H21C21.2652 22 21.5196 21.8946 21.7071 21.7071C21.8946 21.5196 22 21.2652 22 21C22 20.7348 21.8946 20.4804 21.7071 20.2929C21.5196 20.1054 21.2652 20 21 20ZM13 20H11V16H13V20ZM18 20H15V15C15 14.7348 14.8946 14.4804 14.7071 14.2929C14.5196 14.1054 14.2652 14 14 14H10C9.73478 14 9.48043 14.1054 9.29289 14.2929C9.10536 14.4804 9 14.7348 9 15V20H6V4H18V20Z"
                               fill="currentColor"
@@ -144,14 +170,14 @@ export default function SideBar({
                       ) : (
                         <div className="flex gap-[15px] ml-5 justify-center items-center  ">
                           <div className="flex gap-2">
-
                             <div className=" ">
                               <svg
                                 width="24"
                                 height="24"
                                 viewBox="0 0 24 24"
                                 fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
                                 <path
                                   d="M14 8H15C15.2652 8 15.5196 7.89464 15.7071 7.70711C15.8946 7.51957 16 7.26522 16 7C16 6.73478 15.8946 6.48043 15.7071 6.29289C15.5196 6.10536 15.2652 6 15 6H14C13.7348 6 13.4804 6.10536 13.2929 6.29289C13.1054 6.48043 13 6.73478 13 7C13 7.26522 13.1054 7.51957 13.2929 7.70711C13.4804 7.89464 13.7348 8 14 8ZM14 12H15C15.2652 12 15.5196 11.8946 15.7071 11.7071C15.8946 11.5196 16 11.2652 16 11C16 10.7348 15.8946 10.4804 15.7071 10.2929C15.5196 10.1054 15.2652 10 15 10H14C13.7348 10 13.4804 10.1054 13.2929 10.2929C13.1054 10.4804 13 10.7348 13 11C13 11.2652 13.1054 11.5196 13.2929 11.7071C13.4804 11.8946 13.7348 12 14 12ZM9 8H10C10.2652 8 10.5196 7.89464 10.7071 7.70711C10.8946 7.51957 11 7.26522 11 7C11 6.73478 10.8946 6.48043 10.7071 6.29289C10.5196 6.10536 10.2652 6 10 6H9C8.73478 6 8.48043 6.10536 8.29289 6.29289C8.10536 6.48043 8 6.73478 8 7C8 7.26522 8.10536 7.51957 8.29289 7.70711C8.48043 7.89464 8.73478 8 9 8ZM9 12H10C10.2652 12 10.5196 11.8946 10.7071 11.7071C10.8946 11.5196 11 11.2652 11 11C11 10.7348 10.8946 10.4804 10.7071 10.2929C10.5196 10.1054 10.2652 10 10 10H9C8.73478 10 8.48043 10.1054 8.29289 10.2929C8.10536 10.4804 8 10.7348 8 11C8 11.2652 8.10536 11.5196 8.29289 11.7071C8.48043 11.8946 8.73478 12 9 12ZM21 20H20V3C20 2.73478 19.8946 2.48043 19.7071 2.29289C19.5196 2.10536 19.2652 2 19 2H5C4.73478 2 4.48043 2.10536 4.29289 2.29289C4.10536 2.48043 4 2.73478 4 3V20H3C2.73478 20 2.48043 20.1054 2.29289 20.2929C2.10536 20.4804 2 20.7348 2 21C2 21.2652 2.10536 21.5196 2.29289 21.7071C2.48043 21.8946 2.73478 22 3 22H21C21.2652 22 21.5196 21.8946 21.7071 21.7071C21.8946 21.5196 22 21.2652 22 21C22 20.7348 21.8946 20.4804 21.7071 20.2929C21.5196 20.1054 21.2652 20 21 20ZM13 20H11V16H13V20ZM18 20H15V15C15 14.7348 14.8946 14.4804 14.7071 14.2929C14.5196 14.1054 14.2652 14 14 14H10C9.73478 14 9.48043 14.1054 9.29289 14.2929C9.10536 14.4804 9 14.7348 9 15V20H6V4H18V20Z"
                                   fill="currentColor"
@@ -171,16 +197,21 @@ export default function SideBar({
             </div>
             <div>
               <div className="flex mt-1 ">
-                <div className={`w-full  rounded-[8px] ${orderbar === 1 ? 'pb-1 px-1 yellow ' : ''} duration-100`}>
-
-                  <div className={`${bar == 1
-                    ? "justify-start items-center"
-                    : " justify-center items-center"
+                <div
+                  className={`w-full  rounded-[8px] ${
+                    orderbar === 1 ? "pb-1 px-1 yellow " : ""
+                  } duration-100`}
+                >
+                  <div
+                    className={`${
+                      bar == 1
+                        ? "justify-start items-center"
+                        : " justify-center items-center"
                     } w-full  h-[40px] flex my-1  ps-1 gap-1
-                            rounded-md hover:bg-amber-400 shrink-0 hover:text-white duration-200 ease-in-out ${user}`}>
+                            rounded-md hover:bg-amber-400 shrink-0 hover:text-white duration-200 ease-in-out ${user}`}
+                  >
                     <a href="/detailuser" className="w-full">
-                      <button
-                      >
+                      <button>
                         {bar === 0 ? (
                           <div className="flex w-10 justify-center justify-items-center pr-[3px] pt-[3px]">
                             <svg
@@ -188,11 +219,15 @@ export default function SideBar({
                               height="28"
                               viewBox="0 0 28 28"
                               fill="none"
-                              xmlns="http://www.w3.org/2000/svg">
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M14.0007 4.66667C12.3682 4.66637 10.7642 5.09424 9.34883 5.90757C7.93342 6.7209 6.75609 7.89124 5.93435 9.30178C5.11261 10.7123 4.6752 12.3137 4.66578 13.9461C4.65635 15.5786 5.07525 17.1849 5.88066 18.6048C6.42504 17.8973 7.12483 17.3245 7.92593 16.9306C8.72703 16.5368 9.60798 16.3324 10.5007 16.3333H17.5007C18.3934 16.3324 19.2743 16.5368 20.0754 16.9306C20.8765 17.3245 21.5763 17.8973 22.1207 18.6048C22.9261 17.1849 23.345 15.5786 23.3356 13.9461C23.3261 12.3137 22.8887 10.7123 22.067 9.30178C21.2452 7.89124 20.0679 6.7209 18.6525 5.90757C17.2371 5.09424 15.6331 4.66637 14.0007 4.66667ZM23.2675 21.0887C24.8274 19.0551 25.6711 16.5629 25.6673 14C25.6673 7.5565 20.4442 2.33334 14.0007 2.33334C7.55716 2.33334 2.334 7.5565 2.334 14C2.33015 16.5629 3.17389 19.0552 4.73383 21.0887L4.728 21.1097L5.14216 21.5915C6.23636 22.8708 7.59495 23.8975 9.12427 24.6011C10.6536 25.3046 12.3173 25.6682 14.0007 25.6667C16.3659 25.671 18.676 24.9526 20.6215 23.6075C21.4509 23.0344 22.203 22.3569 22.8592 21.5915L23.2733 21.1097L23.2675 21.0887ZM14.0007 7C13.0724 7 12.1822 7.36875 11.5258 8.02513C10.8694 8.68151 10.5007 9.57174 10.5007 10.5C10.5007 11.4283 10.8694 12.3185 11.5258 12.9749C12.1822 13.6313 13.0724 14 14.0007 14C14.9289 14 15.8192 13.6313 16.4755 12.9749C17.1319 12.3185 17.5007 11.4283 17.5007 10.5C17.5007 9.57174 17.1319 8.68151 16.4755 8.02513C15.8192 7.36875 14.9289 7 14.0007 7Z"
-                                fill="currentColor" />
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                fillRule="evenodd"
+                                clipRule="evenodd"
+                                d="M14.0007 4.66667C12.3682 4.66637 10.7642 5.09424 9.34883 5.90757C7.93342 6.7209 6.75609 7.89124 5.93435 9.30178C5.11261 10.7123 4.6752 12.3137 4.66578 13.9461C4.65635 15.5786 5.07525 17.1849 5.88066 18.6048C6.42504 17.8973 7.12483 17.3245 7.92593 16.9306C8.72703 16.5368 9.60798 16.3324 10.5007 16.3333H17.5007C18.3934 16.3324 19.2743 16.5368 20.0754 16.9306C20.8765 17.3245 21.5763 17.8973 22.1207 18.6048C22.9261 17.1849 23.345 15.5786 23.3356 13.9461C23.3261 12.3137 22.8887 10.7123 22.067 9.30178C21.2452 7.89124 20.0679 6.7209 18.6525 5.90757C17.2371 5.09424 15.6331 4.66637 14.0007 4.66667ZM23.2675 21.0887C24.8274 19.0551 25.6711 16.5629 25.6673 14C25.6673 7.5565 20.4442 2.33334 14.0007 2.33334C7.55716 2.33334 2.334 7.5565 2.334 14C2.33015 16.5629 3.17389 19.0552 4.73383 21.0887L4.728 21.1097L5.14216 21.5915C6.23636 22.8708 7.59495 23.8975 9.12427 24.6011C10.6536 25.3046 12.3173 25.6682 14.0007 25.6667C16.3659 25.671 18.676 24.9526 20.6215 23.6075C21.4509 23.0344 22.203 22.3569 22.8592 21.5915L23.2733 21.1097L23.2675 21.0887ZM14.0007 7C13.0724 7 12.1822 7.36875 11.5258 8.02513C10.8694 8.68151 10.5007 9.57174 10.5007 10.5C10.5007 11.4283 10.8694 12.3185 11.5258 12.9749C12.1822 13.6313 13.0724 14 14.0007 14C14.9289 14 15.8192 13.6313 16.4755 12.9749C17.1319 12.3185 17.5007 11.4283 17.5007 10.5C17.5007 9.57174 17.1319 8.68151 16.4755 8.02513C15.8192 7.36875 14.9289 7 14.0007 7Z"
+                                fill="currentColor"
+                              />
                             </svg>
-
                           </div>
                         ) : (
                           <div className="flex gap-[15px] ml-[18px] justify-center items-center  ">
@@ -203,10 +238,14 @@ export default function SideBar({
                                   height="28"
                                   viewBox="0 0 28 28"
                                   fill="none"
-                                  xmlns="http://www.w3.org/2000/svg">
-                                  <path fill-rule="evenodd" clip-rule="evenodd"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    fillRule="evenodd"
+                                    clipRule="evenodd"
                                     d="M14.0007 4.66667C12.3682 4.66637 10.7642 5.09424 9.34883 5.90757C7.93342 6.7209 6.75609 7.89124 5.93435 9.30178C5.11261 10.7123 4.6752 12.3137 4.66578 13.9461C4.65635 15.5786 5.07525 17.1849 5.88066 18.6048C6.42504 17.8973 7.12483 17.3245 7.92593 16.9306C8.72703 16.5368 9.60798 16.3324 10.5007 16.3333H17.5007C18.3934 16.3324 19.2743 16.5368 20.0754 16.9306C20.8765 17.3245 21.5763 17.8973 22.1207 18.6048C22.9261 17.1849 23.345 15.5786 23.3356 13.9461C23.3261 12.3137 22.8887 10.7123 22.067 9.30178C21.2452 7.89124 20.0679 6.7209 18.6525 5.90757C17.2371 5.09424 15.6331 4.66637 14.0007 4.66667ZM23.2675 21.0887C24.8274 19.0551 25.6711 16.5629 25.6673 14C25.6673 7.5565 20.4442 2.33334 14.0007 2.33334C7.55716 2.33334 2.334 7.5565 2.334 14C2.33015 16.5629 3.17389 19.0552 4.73383 21.0887L4.728 21.1097L5.14216 21.5915C6.23636 22.8708 7.59495 23.8975 9.12427 24.6011C10.6536 25.3046 12.3173 25.6682 14.0007 25.6667C16.3659 25.671 18.676 24.9526 20.6215 23.6075C21.4509 23.0344 22.203 22.3569 22.8592 21.5915L23.2733 21.1097L23.2675 21.0887ZM14.0007 7C13.0724 7 12.1822 7.36875 11.5258 8.02513C10.8694 8.68151 10.5007 9.57174 10.5007 10.5C10.5007 11.4283 10.8694 12.3185 11.5258 12.9749C12.1822 13.6313 13.0724 14 14.0007 14C14.9289 14 15.8192 13.6313 16.4755 12.9749C17.1319 12.3185 17.5007 11.4283 17.5007 10.5C17.5007 9.57174 17.1319 8.68151 16.4755 8.02513C15.8192 7.36875 14.9289 7 14.0007 7Z"
-                                    fill="currentColor" />
+                                    fill="currentColor"
+                                  />
                                 </svg>
                               </div>
                             </div>
@@ -222,27 +261,41 @@ export default function SideBar({
               </div>
             </div>
             <div className="flex mt-1">
-              <div className={`w-full  rounded-[8px] ${orderbar1 === 1 ? 'pb-1 px-1 yellow ' : ''} duration-100`}>
-
-                <div className={`${bar == 1
-                  ? "justify-start items-center"
-                  : " justify-center items-center"
+              <div
+                className={`w-full  rounded-[8px] ${
+                  orderbar1 === 1 ? "pb-1 px-1 yellow " : ""
+                } duration-100`}
+              >
+                <div
+                  className={`${
+                    bar == 1
+                      ? "justify-start items-center"
+                      : " justify-center items-center"
                   } w-full  h-[40px] flex my-1  ps-1 gap-1
-                            rounded-md hover:bg-amber-400 shrink-0 hover:text-white duration-200 ease-in-out ${order}`}>
+                            rounded-md hover:bg-amber-400 shrink-0 hover:text-white duration-200 ease-in-out ${order}`}
+                >
                   <button onClick={toggleOrderbar1} className="w-5">
-                    <div >
-
-                      <svg className={`${orderbar1 === 1 ? 'rotate-90 ' : ''} w-full duration-100 `} width="9" height="9" viewBox="0 0 11 14" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11 7L0.499999 13.0622L0.5 0.937822L11 7Z" fill="currentColor" />
+                    <div>
+                      <svg
+                        className={`${
+                          orderbar1 === 1 ? "rotate-90 " : ""
+                        } w-full duration-100 `}
+                        width="9"
+                        height="9"
+                        viewBox="0 0 11 14"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11 7L0.499999 13.0622L0.5 0.937822L11 7Z"
+                          fill="currentColor"
+                        />
                       </svg>
-
                     </div>
                   </button>
 
                   <a href="/order" className="w-full">
-                    <button
-
-                    >
+                    <button>
                       {bar === 0 ? (
                         <div className="w-10 flex  justify-center justify-items-center pr-[5px] pt-[4px]">
                           <svg
@@ -261,7 +314,6 @@ export default function SideBar({
                       ) : (
                         <div className="flex gap-[15px] justify-center items-center  ">
                           <div className="flex gap-2">
-
                             <div className=" ">
                               <svg
                                 width="20"
@@ -288,25 +340,38 @@ export default function SideBar({
                 {orderbar1 === 1 && (
                   <>
                     <div className="flex flex-col ms-6 grey rounded-md py-2 px-3 font-medium">
-                      <a className="hover:text-[#E3B02B]" href="/order/belumbayar">Belum Bayar</a>
-                      <a className="hover:text-[#E3B02B]" href="/order/diproses">Diproses</a>
-                      <a className="hover:text-[#E3B02B]" href="/order/sudahbayar">Sudah Bayar</a>
+                      <a
+                        className="hover:text-[#E3B02B]"
+                        href="/order/belumbayar"
+                      >
+                        Belum Bayar
+                      </a>
+                      <a
+                        className="hover:text-[#E3B02B]"
+                        href="/order/diproses"
+                      >
+                        Diproses
+                      </a>
+                      <a
+                        className="hover:text-[#E3B02B]"
+                        href="/order/sudahbayar"
+                      >
+                        Sudah Bayar
+                      </a>
                     </div>
                   </>
-                )
-                }
-
+                )}
               </div>
             </div>
-
           </div>
           <div>
             <button
-              className={`${bar == 1
-                ? "ms-5 justify-start items-center"
-                : "ms-2 justify-center items-center"
-                } w-[155px] h-[58px] duration-100 hover:translate-x-[-5px]  `}
-            // onClick={submitLogout}
+              className={`${
+                bar == 1
+                  ? "ms-5 justify-start items-center"
+                  : "ms-2 justify-center items-center"
+              } w-[155px] h-[58px] duration-100 hover:translate-x-[-5px]  `}
+              onClick={submitLogout}
             >
               {bar === 0 ? (
                 <div className=" w-16  h-[50px] bg-red-600 text-white p-2 pe-3 shrink-0 rounded-md flex gap-2 items-center justify-center">
@@ -364,6 +429,5 @@ export default function SideBar({
         </div>
       </div>
     </div>
-
   );
 }
