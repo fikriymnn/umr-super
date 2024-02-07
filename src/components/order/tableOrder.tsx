@@ -37,11 +37,11 @@ function TableOrder({
   return (
     <div>
       <div className="rounded-md min-w-full flex gap-3 bg-neutral-200 mb-1 px-2 py-2">
-        <div className="flex gap-2 w-4/12 ">
+        <div className="flex gap-2 w-6/12 ">
           <div className="text-[20px] w-[40px] line-clamp-1">
             <p>{no}</p>
           </div>
-          <div className="text-[20px] w-full line-clamp-1">
+          <div className="text-[20px] w-10/12 line-clamp-1">
             <p>{name}</p>
           </div>
           <div className="w-6/12 text-[20px] line-clamp-1">
