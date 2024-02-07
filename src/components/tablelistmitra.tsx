@@ -17,11 +17,12 @@ function Tablelistmitra(
                             width={196}
                             className="flex-col shadow lg:w-16 lg:h-16 w-12 h-12 bg-zinc-300 rounded-full lg:mt-0 mt-3"
                         />
-                        <div className='flex-col w-10/12 py-2 ml-5  items-center'>
+                        <div className='flex-col w-10/12 py-2 ml-5 pt-5 items-center'>
                             <label className=' text-black text-xl lg:text-2xl font-semibold line-clamp-1'>
                                 {nama_mitra}
                             </label>
                         </div>
+
 
                         <div className='flex-col w-2/12 gap-3 items-center lg:py-1 pt-2'>
                             <button className='lg:w-24 lg:h-7 w-14 h-5 bg-amber-400 rounded-md text-center lg:text-base text-xs text-white font-medium'>

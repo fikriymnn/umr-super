@@ -1,23 +1,30 @@
+"use client";
 import TableOrder from "@/components/order/tableOrder";
 import SideBar from "@/components/sideBar";
-import React from "react";
+import React, { useEffect, useState } from 'react';
 import axios from "axios";
-async function GetDataOrder() {
-    let data;
-    try {
-        const res = await axios.get(
-            `http://localhost:9006/api/order/:id?skip=0&limit=100`
-        );
-        data = res.data.data;
 
-
-    } catch (error) {
-        data = null;
-    }
-    return data;
-}
 async function Order() {
-    const DataOrder = await GetDataOrder();
+    const [order, setOrder] = useState<any>(null);
+    useEffect(() => {
+        GetDataOrder()
+    }, []);
+    async function GetDataOrder() {
+        let data;
+        try {
+            const res = await axios.get(
+                `http://localhost:9006/api/order`
+            );
+            setOrder(res.data.data);
+            console.log(res.data.data)
+
+        } catch (error) {
+            console.log(error)
+        }
+
+    }
+
+
     return (
         <div className="flex ">
             <SideBar order=" text-white bg-[#E3B02B]" />
@@ -107,10 +114,10 @@ async function Order() {
                                 mitra={"PT. Acep Kaya anjay sejahtera sss"}
                                 status={'Sudah Bayar'}
                             />
-                            {DataOrder == null ? (
+                            {order == null ? (
                                 <div></div>
                             ) : (
-                                DataOrder.map((data: any, index: any, i: number) => {
+                                order.map((data: any, index: any, i: number) => {
                                     return (
                                         <>
                                             <TableOrder
