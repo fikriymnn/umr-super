@@ -45,7 +45,7 @@ function Page() {
         <div className="bg-[url('/bglogin.png')] bg-cover bg-center w-full h-full">
           <div className="flex ml-[143px] p-[28px]">
             <label className="text-black text-4xl font-extrabold">
-              Mitra Ibadahku
+              Super Admin Ibadahku
             </label>
           </div>
           <div className="flex ml-[166px] mt-[130px] text-black text-4xl font-bold ">
@@ -62,13 +62,13 @@ function Page() {
               <div>
                 <div className=" ">
                   <label className="w-80 text-black text-1xl font-semibold ">
-                    Nama Mitra
+                    Nama
                   </label>
                 </div>
                 <input
                   className="mb-[8px] h-11 bg-neutral-200 rounded w-80 text-stone-500 text-opacity-60 text-base font-normal "
                   id="namamitra"
-                  placeholder="Masukkan Nama Mitra"
+                  placeholder="Masukkan Nama "
                   required
                   type="text"
                   style={{ paddingLeft: "10px" }}
@@ -84,7 +84,7 @@ function Page() {
                   className="mb-[8px] h-11 bg-neutral-200 rounded w-80 text-stone-500 text-opacity-60 text-base font-normal"
                   id="email"
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Masukkan Email Mitra"
+                  placeholder="Masukkan Email "
                   required
                   type="email"
                   style={{ paddingLeft: "10px" }}
