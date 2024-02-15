@@ -32,7 +32,12 @@ function DetailOrder({ params }: { params: any }) {
   async function updateOrder(id: any) {
     try {
       const res = await axios.put(
-        `${process.env.NEXT_PUBLIC_URL}/api/order/${id}?status=pembayaran selesai`,
+        // `${process.env.NEXT_PUBLIC_URL}/api/order/${id}?status=pembayaran selesai`,
+        `${process.env.NEXT_PUBLIC_URL}/api/order/${id}`,
+        {
+
+          status: "pembayaran selesai",
+        },
         {
           withCredentials: true,
         }
@@ -59,10 +64,25 @@ function DetailOrder({ params }: { params: any }) {
       <div className="flex ">
         <SideBar order=" text-white bg-[#E3B02B]" />
         <div className="h-screen w-screen grey px-[28px] py-[20px] overflow-y-scroll">
-          <button onClick={() => updateOrder(params.id)}>updatee</button>
+
+
+
           <div className="bg-white rounded-[10px] w-full mt-[20px] p-5 pb-40">
             {" "}
-            <p className=" text-xl font-semibold">Detail Pesanan Jemaah</p>
+            <div >
+              {DetailOrder != null && DetailOrder.order.status == 'diproses' ? (
+
+                <div className="">
+                  <button className="flex w-full h-10 justify-center text-white bg-amber-400 pt-2 rounded-md font-semibold" onClick={() => updateOrder(params.id)}>Konfirmasi Pesanan</button>
+                </div>
+
+              ) : (
+                <div></div>
+              )}
+            </div>
+
+            <p className=" text-xl font-semibold pt-2">Detail Pesanan Jemaah</p>
+
             <div className="mt-3 ">
               <p className="ml-3 text-base font-semibold">Status Pembayaran</p>
 
@@ -298,7 +318,7 @@ function DetailOrder({ params }: { params: any }) {
               {/* {DetailOrder == null ? ( */}
 
               {DetailOrder == null ||
-              DetailOrder.order.bukti_pembayaran == "" ? (
+                DetailOrder.order.bukti_pembayaran == "" ? (
                 <div className="w-[400px] h-[400px] bg-neutral-200 p-2 rounded-md flex justify-center items-center">
                   <p>Bukti Belum Diunggah</p>
                 </div>

@@ -28,7 +28,7 @@ function Order() {
     <div className="flex ">
       <SideBar order=" text-white bg-[#E3B02B]" />
       <div className="h-screen w-screen grey px-[28px] py-[20px] overflow-y-scroll">
-        <p className="font-semibold text-[28px]">Daftar Order &#40; 4 &#41;</p>
+        <p className="font-semibold text-[28px]">Daftar Order &#40; {order == null ? '0' : order.length} &#41;</p>
         <div className="bg-white rounded-[10px] w-full mt-[20px] p-5">
           <div className="relative flex gap-3 w-5/12 ">
             <input
@@ -81,7 +81,7 @@ function Order() {
             </div>
             <div className="max-h-[500px] overflow-y-scroll border-y-2 border-slate-400 py-3">
               {order == null ? (
-                <div></div>
+                <div className="rounded-md min-w-full h-10 flex gap-3 bg-neutral-200 mb-1 px-2 py-2"></div>
               ) : (
                 order.map((data: any, index: number) => {
                   return (
