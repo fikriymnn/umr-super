@@ -1,13 +1,35 @@
+"use client"
 import TableOrder from "@/components/order/tableOrder";
 import SideBar from "@/components/sideBar";
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 function Diproses() {
+    const [order, setOrder] = useState<any>(null);
+    useEffect(() => {
+        getOrder();
+    }, []);
+
+    async function getOrder() {
+        // const url = `${process.env.NEXT_PUBLIC_URL}/api/order?skip=0&limit=100`;
+        try {
+            const res = await axios.get(`${process.env.NEXT_PUBLIC_URL}/api/order?status=diproses&skip=0&limit=100`,
+                {
+                    withCredentials: true,
+                }
+            );
+
+            setOrder(res.data.data);
+            console.log(res.data.data);
+        } catch (error: any) {
+            console.log(error.response);
+        }
+    }
     return (
         <div className="flex ">
             <SideBar order=" text-white bg-[#E3B02B]" />
             <div className="h-screen w-screen grey px-[28px] py-[20px] overflow-y-scroll">
-                <p className="font-semibold text-[28px]">Daftar Order Diproses &#40; 1 &#41;</p>
+                <p className="font-semibold text-[28px]">Daftar Order Diproses &#40; {order == null ? '0' : order.length} &#41;</p>
                 <div className="bg-white rounded-[10px] w-full mt-[20px] p-5">
                     <div className="relative flex gap-3 w-5/12 ">
 
@@ -42,32 +64,38 @@ function Diproses() {
                     </div>
                     <div className="overflow-x-scroll">
                         <div className="h-full min-w-full py-3 flex gap-3">
-                            <div className="flex gap-2 w-6/12 ">
+                            <div className="flex gap-2 w-full ">
                                 <div className="text-[20px] font-semibold w-[35px] ">No</div>
                                 <div className="text-[20px] font-semibold w-8/12 ">
                                     Nama Pemesan
                                 </div>
-                                <div className="w-4/12 text-[20px] font-semibold ">
-                                    Jumlah
-                                </div>
-                            </div>
-                            <div className="flex gap-2 w-full justify-between">
-                                <div className="w-4/12  text-[20px] font-semibold ">Paket</div>
-                                <div className="w-4/12  text-[20px] font-semibold ">Mitra</div>
-                                <div className="w-3/12  flex gap-3 text-[20px] font-semibold">
+                                <div className="w-5/12 text-[20px] font-semibold ">Jumlah</div>
+                                <div className="w-full  text-[20px] font-semibold ">Paket</div>
+                                {/* <div className="w-full  text-[20px] font-semibold ">Mitra</div> */}
+                                <div className="w-full  flex gap-3 text-[20px] font-semibold">
                                     Status
                                 </div>
                             </div>
                         </div>
                         <div className="max-h-[500px] overflow-y-scroll border-y-2 border-slate-400 py-3">
-                            <TableOrder
-                                no={"1"}
-                                name={"Tio ini iya"}
-                                jumlah={"4"}
-                                paket={"Paket umroh untuk kalangan atas"}
-                                mitra={"PT. Acep Kaya anjay sejahtera sss"}
-                                status={"Diproses"}
-                            />
+                            {order == null ? (
+                                <div className="rounded-md min-w-full h-10 flex gap-3 bg-neutral-200 mb-1 px-2 py-2"></div>
+                            ) : (
+                                order.map((data: any, index: number) => {
+                                    return (
+                                        <TableOrder
+                                            key={index}
+                                            id={data.order._id}
+                                            no={index + 1}
+                                            name={data.order.nama_lengkap}
+                                            jumlah={data.order.jamaah.length}
+                                            paket={data.paket.title}
+                                            mitra={""}
+                                            status={data.order.status}
+                                        />
+                                    );
+                                })
+                            )}
                         </div>
                     </div>
                 </div>
