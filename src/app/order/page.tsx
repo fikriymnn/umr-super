@@ -28,7 +28,9 @@ function Order() {
     <div className="flex ">
       <SideBar order=" text-white bg-[#E3B02B]" />
       <div className="h-screen w-screen grey px-[28px] py-[20px] overflow-y-scroll">
-        <p className="font-semibold text-[28px]">Daftar Order &#40; {order == null ? '0' : order.length} &#41;</p>
+        <p className="font-semibold text-[28px]">
+          Daftar Order &#40; {order == null ? "0" : order.length} &#41;
+        </p>
         <div className="bg-white rounded-[10px] w-full mt-[20px] p-5">
           <div className="relative flex gap-3 w-5/12 ">
             <input
@@ -87,13 +89,13 @@ function Order() {
                   return (
                     <TableOrder
                       key={index}
-                      id={data.order._id}
+                      id={data._id}
                       no={index + 1}
-                      name={data.order.nama_lengkap}
-                      jumlah={data.order.jamaah.length}
-                      paket={data.paket.title}
+                      name={data.nama_lengkap}
+                      jumlah={data.jamaah.length}
+                      paket={data.paket[0].title}
                       mitra={""}
-                      status={data.order.status}
+                      status={data.status}
                     />
                   );
                 })
