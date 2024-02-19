@@ -35,8 +35,8 @@ function DetailOrder({ params }: { params: any }) {
         // `${process.env.NEXT_PUBLIC_URL}/api/order/${id}?status=pembayaran selesai`,
         `${process.env.NEXT_PUBLIC_URL}/api/order/${id}`,
         {
-
           status: "pembayaran selesai",
+          status_keberangkatan: "belum berangkat",
         },
         {
           withCredentials: true,
@@ -55,7 +55,7 @@ function DetailOrder({ params }: { params: any }) {
   const date =
     DetailOrder == null
       ? new Date()
-      : new Date(DetailOrder.paket.waktu_keberangkatan);
+      : new Date(DetailOrder.paket[0].waktu_keberangkatan);
   // Format tanggal
   const WaktuKeberangkatan = format(date, "d MMM y");
 
@@ -64,25 +64,23 @@ function DetailOrder({ params }: { params: any }) {
       <div className="flex ">
         <SideBar order=" text-white bg-[#E3B02B]" />
         <div className="h-screen w-screen grey px-[28px] py-[20px] overflow-y-scroll">
-
-
-
           <div className="bg-white rounded-[10px] w-full mt-[20px] p-5 pb-40">
             {" "}
-            <div >
-              {DetailOrder != null && DetailOrder.order.status == 'diproses' ? (
-
+            <div>
+              {DetailOrder != null && DetailOrder.status == "diproses" ? (
                 <div className="">
-                  <button className="flex w-full h-10 justify-center text-white bg-amber-400 pt-2 rounded-md font-semibold" onClick={() => updateOrder(params.id)}>Konfirmasi Pesanan</button>
+                  <button
+                    className="flex w-full h-10 justify-center text-white bg-amber-400 pt-2 rounded-md font-semibold"
+                    onClick={() => updateOrder(params.id)}
+                  >
+                    Konfirmasi Pesanan
+                  </button>
                 </div>
-
               ) : (
                 <div></div>
               )}
             </div>
-
             <p className=" text-xl font-semibold pt-2">Detail Pesanan Jemaah</p>
-
             <div className="mt-3 ">
               <p className="ml-3 text-base font-semibold">Status Pembayaran</p>
 
@@ -90,7 +88,7 @@ function DetailOrder({ params }: { params: any }) {
                 <div className="bg-slate-200 w-full h-6"></div>
               ) : (
                 <p className="w-full bg-neutral-200 p-2 rounded-md text-[19px]">
-                  {DetailOrder.order.status}
+                  {DetailOrder.status}
                 </p>
               )}
             </div>
@@ -100,14 +98,14 @@ function DetailOrder({ params }: { params: any }) {
               </p>
               {/* <div className="w-full bg-neutral-200 p-2 rounded-md">
                 <p className="text-[19px]">
-                  {DetailOrder.order.status_keberangkatan}
+                  {DetailOrder.status_keberangkatan}
                 </p>
               </div> */}
               {DetailOrder == null ? (
                 <div className="bg-slate-200 w-full h-6"></div>
               ) : (
                 <p className="w-full bg-neutral-200 p-2 rounded-md text-[19px]">
-                  {DetailOrder.order.status_keberangkatan}
+                  {DetailOrder.status_keberangkatan}
                 </p>
               )}
             </div>
@@ -132,39 +130,39 @@ function DetailOrder({ params }: { params: any }) {
             <div className="mt-5 ">
               <p className="ml-3 text-base font-semibold">Nama Pemesan</p>
               {/* <div className="w-full bg-neutral-200 p-2 rounded-md">
-                <p className="text-[19px]">{DetailOrder.order.nama_lengkap}</p>
+                <p className="text-[19px]">{DetailOrder.nama_lengkap}</p>
               </div> */}
               {DetailOrder == null ? (
                 <div className="bg-slate-200 w-full h-6"></div>
               ) : (
                 <p className="w-full bg-neutral-200 p-2 rounded-md text-[19px]">
-                  {DetailOrder.order.nama_lengkap}
+                  {DetailOrder.nama_lengkap}
                 </p>
               )}
             </div>
             <div className="mt-3 ">
               <p className="ml-3 text-base font-semibold">No WhatsApp</p>
               {/* <div className="w-full bg-neutral-200 p-2 rounded-md">
-                <p className="text-[19px]">{DetailOrder.order.no_telp}</p>
+                <p className="text-[19px]">{DetailOrder.no_telp}</p>
               </div> */}
               {DetailOrder == null ? (
                 <div className="bg-slate-200 w-full h-6"></div>
               ) : (
                 <p className="w-full bg-neutral-200 p-2 rounded-md text-[19px]">
-                  {DetailOrder.order.no_telp}
+                  {DetailOrder.no_telp}
                 </p>
               )}
             </div>
             <div className="mt-3 ">
               <p className="ml-3 text-base font-semibold">Alamat Email</p>
               {/* <div className="w-full bg-neutral-200 p-2 rounded-md">
-                <p className="text-[19px]">{DetailOrder.order.email}</p>
+                <p className="text-[19px]">{DetailOrder.email}</p>
               </div> */}
               {DetailOrder == null ? (
                 <div className="bg-slate-200 w-full h-6"></div>
               ) : (
                 <p className="w-full bg-neutral-200 p-2 rounded-md text-[19px]">
-                  {DetailOrder.order.email}
+                  {DetailOrder.email}
                 </p>
               )}
             </div>
@@ -172,26 +170,26 @@ function DetailOrder({ params }: { params: any }) {
             <div className="mt-5 ">
               <p className="ml-3 text-base font-semibold">Nama Paket</p>
               {/* <div className="w-full bg-neutral-200 p-2 rounded-md">
-                <p className="text-[19px]">{DetailOrder.paket.title}</p>
+                <p className="text-[19px]">{DetailOrder.paket[0].title}</p>
               </div> */}
               {DetailOrder == null ? (
                 <div className="bg-slate-200 w-full h-6"></div>
               ) : (
                 <p className="w-full bg-neutral-200 p-2 rounded-md text-[19px]">
-                  {DetailOrder.paket.title}
+                  {DetailOrder.paket[0].title}
                 </p>
               )}
             </div>
             <div className="mt-3 ">
               <p className="ml-3 text-base font-semibold">Harga Paket</p>
               {/* <div className="w-full bg-neutral-200 p-2 rounded-md">
-                <p className="text-[19px]">{DetailOrder.paket.price}</p>
+                <p className="text-[19px]">{DetailOrder.paket[0].price}</p>
               </div> */}
               {DetailOrder == null ? (
                 <div className="bg-slate-200 w-full h-6"></div>
               ) : (
                 <p className="w-full bg-neutral-200 p-2 rounded-md text-[19px]">
-                  {DetailOrder.paket.price}
+                  {DetailOrder.paket[0].price}
                 </p>
               )}
             </div>
@@ -199,14 +197,14 @@ function DetailOrder({ params }: { params: any }) {
               <p className="ml-3 text-base font-semibold">Kota Keberangkatan</p>
               {/* <div className="w-full bg-neutral-200 p-2 rounded-md">
                 <p className="text-[19px]">
-                  {DetailOrder.paket.kota_keberangkatan}
+                  {DetailOrder.paket[0].kota_keberangkatan}
                 </p>
               </div> */}
               {DetailOrder == null ? (
                 <div className="bg-slate-200 w-full h-6"></div>
               ) : (
                 <p className="w-full bg-neutral-200 p-2 rounded-md text-[19px]">
-                  {DetailOrder.paket.kota_keberangkatan}
+                  {DetailOrder.paket[0].kota_keberangkatan}
                 </p>
               )}
             </div>
@@ -273,26 +271,26 @@ function DetailOrder({ params }: { params: any }) {
                 <img src={"/bca.png"} alt="" width={55} height={55} />
               </div>
               {/* <p className="my-auto text-black font-medium">
-                {DetailOrder.order.no_rekening_bank}
+                {DetailOrder.no_rekening_bank}
               </p> */}
               {DetailOrder == null ? (
                 <div className="bg-slate-200 w-full h-6"></div>
               ) : (
                 <p className="my-auto text-black font-medium">
-                  {DetailOrder.order.no_rekening_bank}
+                  {DetailOrder.no_rekening_bank}
                 </p>
               )}
             </div>
             <div className="mt-3 ">
               <p className="ml-3 text-base font-semibold">Total Pembayaran</p>
               {/* <div className="w-full bg-neutral-200 p-2 rounded-md">
-                <p className="text-[19px]">{DetailOrder.order.jumlah_bayar}</p>
+                <p className="text-[19px]">{DetailOrder.jumlah_bayar}</p>
               </div> */}
               {DetailOrder == null ? (
                 <div className="bg-slate-200 w-full h-6"></div>
               ) : (
                 <p className="w-full bg-neutral-200 p-2 rounded-md text-[19px]">
-                  {DetailOrder.order.jumlah_bayar}
+                  {DetailOrder.jumlah_bayar}
                 </p>
               )}
             </div>
@@ -302,14 +300,14 @@ function DetailOrder({ params }: { params: any }) {
               </p>
               {/* <div className="w-full bg-neutral-200 p-2 rounded-md">
                 <p className="text-[19px]">
-                  {DetailOrder.order.nama_pemilik_rekening}
+                  {DetailOrder.nama_pemilik_rekening}
                 </p>
               </div> */}
               {DetailOrder == null ? (
                 <div className="bg-slate-200 w-full h-6"></div>
               ) : (
                 <p className="w-full bg-neutral-200 p-2 rounded-md text-[19px]">
-                  {DetailOrder.order.nama_pemilik_rekening}
+                  {DetailOrder.nama_pemilik_rekening}
                 </p>
               )}
             </div>
@@ -317,8 +315,7 @@ function DetailOrder({ params }: { params: any }) {
               <p className="ml-3 text-base font-semibold">Bukti Pembayaran</p>
               {/* {DetailOrder == null ? ( */}
 
-              {DetailOrder == null ||
-                DetailOrder.order.bukti_pembayaran == "" ? (
+              {DetailOrder == null || DetailOrder.bukti_pembayaran == "" ? (
                 <div className="w-[400px] h-[400px] bg-neutral-200 p-2 rounded-md flex justify-center items-center">
                   <p>Bukti Belum Diunggah</p>
                 </div>
@@ -326,7 +323,7 @@ function DetailOrder({ params }: { params: any }) {
                 <div className="w-[400px] h-[400px] bg-neutral-200 p-2 rounded-md flex justify-center items-center">
                   <img
                     alt="bukti pembayaran"
-                    src={DetailOrder.order.bukti_pembayaran}
+                    src={DetailOrder.bukti_pembayaran}
                     className="w-[400px] h-[400px] p-2 rounded-md"
                   />
                 </div>
@@ -359,7 +356,7 @@ function DetailOrder({ params }: { params: any }) {
                 </div>
               </>
             ) : (
-              DetailOrder.order.jamaah.map((data: any, i: number) => {
+              DetailOrder.jamaah.map((data: any, i: number) => {
                 return (
                   <div
                     key={i}

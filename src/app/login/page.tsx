@@ -14,7 +14,7 @@ function Page() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_URL}/api/login_mitra`,
+        `${process.env.NEXT_PUBLIC_URL}/api/login_superadmin`,
         { email: Email, password: Password },
 
         {
