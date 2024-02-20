@@ -234,30 +234,29 @@ function DetailOrder({ params }: { params: any }) {
                 <path
                   d="M25.648 11.2652H6.35001C5.43573 11.2652 5.04389 10.2693 5.76226 9.79581L15.4112 3.47744C15.5894 3.37264 15.7923 3.31738 15.999 3.31738C16.2057 3.31738 16.4086 3.37264 16.5867 3.47744L26.2357 9.79581C26.9541 10.2693 26.5623 11.2652 25.648 11.2652Z"
                   stroke="black"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M25.7959 20.2451H6.20402C5.75318 20.2451 5.3877 20.6106 5.3877 21.0614V23.5104C5.3877 23.9613 5.75318 24.3267 6.20402 24.3267H25.7959C26.2467 24.3267 26.6122 23.9613 26.6122 23.5104V21.0614C26.6122 20.6106 26.2467 20.2451 25.7959 20.2451Z"
                   stroke="black"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M7.83594 11.2656V20.2452M11.9176 11.2656V20.2452M15.9992 11.2656V20.2452M20.0808 11.2656V20.2452M24.1625 11.2656V20.2452"
                   stroke="black"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <circle
                   cx="16"
                   cy="16"
                   r="15"
                   stroke="black"
-                  stroke-width="2"
                 />
               </svg>
 

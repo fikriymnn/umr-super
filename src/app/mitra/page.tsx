@@ -63,7 +63,9 @@ async function Mitra() {
               </div>
               <div>
                 {DataMitra == null ? (
-                  <div></div>
+                  <div className="flex w-full h-10 bg-neutral-200">
+
+                  </div>
                 ) : (
                   DataMitra.map((data: any, index: any) => {
                     return (

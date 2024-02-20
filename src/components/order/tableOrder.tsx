@@ -17,7 +17,7 @@ function TableOrder({
   status: any;
 }) {
   let buttonColor;
-
+  let statusPaket;
   switch (status) {
     case "belum bayar":
       buttonColor = "#DC2626";
@@ -30,6 +30,19 @@ function TableOrder({
       break;
     default:
       buttonColor = "white";
+  }
+  switch (status) {
+    case "belum bayar":
+      statusPaket = "Belum Bayar";
+      break;
+    case "diproses":
+      statusPaket = "Diproses";
+      break;
+    case "pembayaran selesai":
+      statusPaket = "Pembayaran Selesai";
+      break;
+    default:
+      statusPaket = "Belum Bayar";
   }
   const buttonStyle = {
     backgroundColor: buttonColor,
@@ -61,7 +74,7 @@ function TableOrder({
                 style={buttonStyle}
                 className="w-full flex justify-center items-center text-white py-1 rounded-md hover:scale-110 duration-100"
               >
-                {status}
+                {statusPaket}
               </div>
             </div>
             <div className=" w-full">
