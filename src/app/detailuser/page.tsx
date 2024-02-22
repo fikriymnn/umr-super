@@ -4,20 +4,41 @@ import React, { useEffect, useState } from "react";
 import TableUser from "@/components/tableuser";
 import Pagination from "@/components/pagination";
 import axios from "axios";
-async function GetDataUser() {
-  let data;
-  try {
-    const res = await axios.get(
-      `${process.env.NEXT_PUBLIC_URL}/api/allUser?skip=0&limit=100`
-    );
-    data = res.data.data;
-  } catch (error) {
-    data = null;
+
+function User() {
+  const [user, setUser] = useState<any>(null);
+  const [cari, setCari] = useState<any>(null);
+
+  useEffect(() => {
+    getUSer();
+  }, []);
+
+  async function getUSer() {
+    const url = `${process.env.NEXT_PUBLIC_URL}/api/allUser?skip=0&limit=100`;
+    try {
+      const res = await axios.get(url, {
+        withCredentials: true,
+      });
+
+      setUser(res.data.data);
+    } catch (error: any) {
+      console.log(error.response);
+    }
   }
-  return data;
-}
-async function DetailUser() {
-  const DataUser = await GetDataUser();
+
+  async function searchUser() {
+    const url = `${process.env.NEXT_PUBLIC_URL}/api/allUser?skip=0&limit=100`;
+    try {
+      const res = await axios.get(url, {
+        params: { nama_lengkap: cari },
+        withCredentials: true,
+      });
+
+      setUser(res.data.data);
+    } catch (error: any) {
+      console.log(error.response);
+    }
+  }
   return (
     <div className="flex">
       <SideBar user="text-white bg-[#E3B02B]" />
@@ -27,7 +48,7 @@ async function DetailUser() {
             <div className="flex flex-col bg-white w-full h-full shadow-xl rounded-lg px-8 lg:pt-8 pt-5 lg:pb-14 pb-11">
               <div>
                 <label className="text-black text-2xl font-semibold">
-                  User Terdaftar
+                  User Terdaftar  &#40; {user == null ? "0" : user.length} &#41;
                 </label>
               </div>
               <div className="relative flex gap-3 lg:w-6/12 w-8/12 py-2">
@@ -35,6 +56,8 @@ async function DetailUser() {
                   type="text"
                   className="pl-10 pr-4 py-2 border rounded-md  text-black bg-neutral-200 h-full px-2  w-full"
                   placeholder="Cari User"
+                  onChange={(e) => setCari(e.target.value)}
+
                 />
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <svg
@@ -50,30 +73,18 @@ async function DetailUser() {
                     />
                   </svg>
                 </div>
+                <button className="bg-neutral-200 px-2 py-2 font-semibold rounded-md"
+                  onClick={searchUser}>
+                  Search
+                </button>
               </div>
+
               <div>
-                <TableUser
-                  foto_profile={"/profil.jpeg"}
-                  nama_user={"Tio And Friend"}
-                  no_wa={"0808080808"}
-                  email_user={"emailace1p@email.com"}
-                />
-                <TableUser
-                  foto_profile={"/kaaba.jpg"}
-                  nama_user={"Tio And Enemy"}
-                  no_wa={"0846464646"}
-                  email_user={"emailace2p@email.com"}
-                />
-                <TableUser
-                  foto_profile={"/logo.png"}
-                  nama_user={"Tio Sendi rissss aaaaaaaa"}
-                  no_wa={"0857575757"}
-                  email_user={"emailace3p@email.com"}
-                />
-                {DataUser == null ? (
-                  <div></div>
+                {user == null ? (
+                  <div className="rounded-md w-6/12 h-16 flex gap-3 bg-neutral-200 mb-1 px-2 py-3"></div>
+
                 ) : (
-                  DataUser.map((data: any, index: any) => {
+                  user.map((data: any, index: any) => {
                     return (
                       <>
                         <TableUser
@@ -82,6 +93,7 @@ async function DetailUser() {
                           nama_user={data.nama_lengkap}
                           no_wa={data.no_whatsapp}
                           email_user={data.email}
+                          id={data._id}
                         />
                       </>
                     );
@@ -99,4 +111,4 @@ async function DetailUser() {
   );
 }
 
-export default DetailUser;
+export default User;
