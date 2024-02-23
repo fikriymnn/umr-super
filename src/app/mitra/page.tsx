@@ -1,26 +1,45 @@
+"use client"
 import SideBar from "@/components/sideBar";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Tablelistmitra from "@/components/tablelistmitra";
 import Pagination from "@/components/pagination";
 import axios from "axios";
 
-async function GetDataMitra() {
-  let data;
-  try {
-    const res = await axios.get(
-      `${process.env.NEXT_PUBLIC_URL}/api/mitra?skip=0&limit=100`
-    );
-    data = res.data.data;
-  } catch (error) {
-    data = null;
-  }
+function Mitra() {
+  const [mitra, setMitra] = useState<any>(null);
+  const [cari, setCari] = useState<any>(null);
 
-  return data;
-}
-async function Mitra() {
-  const DataMitra = await GetDataMitra();
+  useEffect(() => {
+    getMitra();
+  }, []);
+
+  async function getMitra() {
+    const url = `${process.env.NEXT_PUBLIC_URL}/api/mitra?skip=0&limit=100`;
+    try {
+      const res = await axios.get(url, {
+        withCredentials: true,
+      });
+
+      setMitra(res.data.data);
+    } catch (error: any) {
+      console.log(error.response);
+    }
+  }
+  async function searchMitra() {
+    const url = `${process.env.NEXT_PUBLIC_URL}/api/mitra?skip=0&limit=100`;
+    try {
+      const res = await axios.get(url, {
+        params: { nama_mitra: cari },
+        withCredentials: true,
+      });
+
+      setMitra(res.data.data);
+    } catch (error: any) {
+      console.log(error.response);
+    }
+  }
   return (
     <div className="flex">
       <SideBar mitra="text-white bg-[#E3B02B]" />
@@ -44,6 +63,7 @@ async function Mitra() {
                     type="text"
                     className="pl-10 pr-4 py-2 border rounded-md  text-black bg-neutral-200 h-full px-2  w-full"
                     placeholder="Cari Mitra"
+                    onChange={(e) => setCari(e.target.value)}
                   />
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                     <svg
@@ -59,15 +79,24 @@ async function Mitra() {
                       />
                     </svg>
                   </div>
+                  <button className="bg-neutral-200 px-2 py-1 font-semibold rounded-md"
+                    onClick={searchMitra}>
+                    Search
+                  </button>
                 </div>
               </div>
               <div>
-                {DataMitra == null ? (
-                  <div className="flex w-full h-10 bg-neutral-200">
+                {mitra == null ? (
+                  <>
+                    <div className="flex flex-wrap w-full">
+                      <div className="flex w-full h-10 bg-neutral-200">
+                      </div>
+                    </div>
 
-                  </div>
+                  </>
+
                 ) : (
-                  DataMitra.map((data: any, index: any) => {
+                  mitra.map((data: any, index: any) => {
                     return (
                       <>
                         <Tablelistmitra

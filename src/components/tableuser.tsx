@@ -2,7 +2,7 @@ import React from 'react'
 import Image from "next/image";
 
 function TableUser(
-    { foto_profile, nama_user, no_wa, email_user }: { foto_profile: any, nama_user: any, no_wa: any, email_user: any }
+    { foto_profile, nama_user, no_wa, email_user, id }: { foto_profile: any, nama_user: any, no_wa: any, email_user: any, id: any }
 ) {
     return (
         <div className='flex'>
@@ -17,17 +17,17 @@ function TableUser(
                             width={176}
                             className="shadow w-20 h-20 bg-zinc-300 rounded-full"
                         />
-                        <div className='grid grid-rows-3 grid-cols-1 px-5'>
-                            <label className='grid w-full ml-5 text-black line-clamp-1 lg:text-2xl text-xl font-semibold'>
+                        <div className='grid grid-rows-3 grid-cols-1'>
+                            <label className='grid w-full ml-5 text-black line-clamp-1 lg:text-2xl text-xl font-semibold '>
                                 {nama_user}
                             </label>
                             <div className='grid mt-2'>
-                                <label className='grid justify-start pl-5 text-neutral-500 lg:text-base text-sm font-semibold'>
+                                <label className='grid w-full justify-start pl-5 text-neutral-500 lg:text-base text-sm font-semibold'>
                                     {no_wa}
                                 </label>
                             </div>
                             <div>
-                                <label className='grid justify-start pl-5 text-neutral-500 lg:text-base text-sm font-semibold'>
+                                <label className='grid w-full justify-start pl-5 text-neutral-500 lg:text-base text-sm font-semibold'>
                                     {email_user}
                                 </label>
                             </div>
