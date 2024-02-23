@@ -73,7 +73,7 @@ function User() {
                     />
                   </svg>
                 </div>
-                <button className="bg-neutral-200 px-2 py-2 font-semibold rounded-md"
+                <button className="bg-neutral-200 px-2 py-1 font-semibold rounded-md"
                   onClick={searchUser}>
                   Search
                 </button>

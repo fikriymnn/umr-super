@@ -6,6 +6,8 @@ import React, { useEffect, useState } from "react";
 
 function Sudahbayar() {
   const [order, setOrder] = useState<any>(null);
+  const [cari, setCari] = useState<any>(null);
+
   useEffect(() => {
     getOrder();
   }, []);
@@ -26,6 +28,20 @@ function Sudahbayar() {
       console.log(error.response);
     }
   }
+  async function searchOrder() {
+    const url = `${process.env.NEXT_PUBLIC_URL}/api/order?status=pembayaran selesai&skip=0&limit=100`;
+    try {
+      const res = await axios.get(url, {
+        params: { nama_lengkap: cari },
+        withCredentials: true,
+      })
+
+      setOrder(res.data.data);
+    } catch (error: any) {
+      console.log(error.response);
+    }
+  }
+
   return (
     <div className="flex ">
       <SideBar order=" text-white bg-[#E3B02B]" />
@@ -40,6 +56,7 @@ function Sudahbayar() {
               type="text"
               className="pl-10 pr-4 py-2 border rounded-md  text-black bg-neutral-200 h-full px-2  w-full"
               placeholder="Cari Order"
+              onChange={(e) => setCari(e.target.value)}
             />
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
               <svg
@@ -55,6 +72,10 @@ function Sudahbayar() {
                 />
               </svg>
             </div>
+            <button className="bg-neutral-200 px-2 py-1 font-semibold rounded-md"
+              onClick={searchOrder}>
+              Search
+            </button>
           </div>
           <div className="flex justify-between">
             <div className=" min-w-full py-3 pe-2 flex gap-3">
