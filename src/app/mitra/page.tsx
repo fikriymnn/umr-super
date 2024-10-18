@@ -52,7 +52,7 @@ function Mitra() {
                   <label className=" text-black text-2xl font-semibold">
                     Mitra Terdaftar
                   </label>
-                  <div className=" pl-[400px]">
+                  <div className="flex justify-end w-full items-end">
                     <button className="w-40 h-8 bg-amber-400 rounded-md text-center text-base text-white font-medium">
                       <Link href="/mitra/tambahmitra">Tambah Mitra</Link>
                     </button>

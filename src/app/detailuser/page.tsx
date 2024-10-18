@@ -21,6 +21,7 @@ function User() {
       });
 
       setUser(res.data.data);
+      console.log(res.data.data)
     } catch (error: any) {
       console.log(error.response);
     }

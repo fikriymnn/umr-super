@@ -7,24 +7,22 @@ function Tablelistmitra(
 ) {
     return (
         <div className='flex'>
-            <div className='flex w-screen h-full overflow-y-scroll py-2 '>
-                <div className='flex flex-col gap-3 w-7/12 bg-neutral-200 rounded-md shadow-lg lg:py-[8px] pt-2 px-[15px] relative'>
-                    <div className='flex'>
+            <div className='grid grid-cols-12 w-screen h-full overflow-y-scroll py-2 gap-5'>
+                <div className='flex flex-col  bg-neutral-200 rounded-md shadow-lg lg:py-[8px] pt-2 px-[15px] relative col-span-8'>
+                    <div className='grid grid-cols-12'>
                         <img
                             alt="logo1"
                             src={foto_profile}
                             height={196}
                             width={196}
-                            className="flex-col shadow lg:w-16 lg:h-16 w-12 h-12 bg-zinc-300 rounded-full lg:mt-0 mt-3"
+                            className="flex-col shadow lg:w-16 lg:h-16 w-12 h-12 bg-zinc-300 rounded-full lg:mt-0 mt-3 col-span-1"
                         />
-                        <div className='flex-col w-10/12 py-2 ml-5 pt-5 items-center'>
+                        <div className='flex-col w-10/12 py-2 ml-5 pt-5 items-center col-span-9'>
                             <label className=' text-black text-xl lg:text-2xl font-semibold line-clamp-1'>
                                 {nama_mitra}
                             </label>
                         </div>
-
-
-                        <div className='flex-col w-2/12 gap-3 items-center lg:py-1 pt-2'>
+                        <div className='flex-col  gap-3 items-center lg:py-1 pt-2 col-span-2'>
                             <button className='lg:w-24 lg:h-7 w-14 h-5 bg-amber-400 rounded-md text-center lg:text-base text-xs text-white font-medium'>
                                 <Link href={`/mitra/profilemitra/${id}`}>
                                     Profile
@@ -38,29 +36,29 @@ function Tablelistmitra(
                     </div>
 
                 </div>
-                <div className='flex flex-col w-5/12 ml-5 bg-neutral-200 rounded-md shadow-lg'>
-                    <div className='grid grid-cols-3'>
-                        <div className='grid justify-items-center lg:py-5 py-2'>
+                <div className=' bg-neutral-200 rounded-md shadow-lg col-span-4'>
+                    <div className='grid grid-cols-3  px-4 py-4'>
+                        <div className='grid justify-center items-center'>
                             <label className='text-black lg:text-2xl text-xl font-semibold'>
                                 {paket_aktif}
                             </label>
-                            <label className='text-center text-neutral-500 text-base font-semibold'>
+                            <label className='text-center text-neutral-500 text-sm font-semibold'>
                                 Paket Aktif
                             </label>
                         </div>
-                        <div className='grid justify-items-center lg:py-5 py-2'>
+                        <div className='grid justify-center items-center'>
                             <label className='text-black lg:text-2xl text-xl  font-semibold'>
                                 {order_aktif}
                             </label>
-                            <label className='text-center text-neutral-500 text-base font-semibold'>
+                            <label className='text-center text-neutral-500 text-sm font-semibold'>
                                 Order Aktif
                             </label>
                         </div>
-                        <div className='grid justify-items-center lg:py-5 py-2'>
+                        <div className='grid justify-center items-center'>
                             <label className='text-black lg:text-2xl text-xl  font-semibold'>
                                 {order_selesai}
                             </label>
-                            <label className='text-center text-neutral-500 text-base font-semibold'>
+                            <label className='text-center text-neutral-500 text-sm font-semibold'>
                                 Order Selesai
                             </label>
                         </div>

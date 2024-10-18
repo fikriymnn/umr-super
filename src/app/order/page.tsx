@@ -42,7 +42,7 @@ function Order() {
   return (
     <div className="flex ">
       <SideBar order=" text-white bg-[#E3B02B]" />
-      <div className="h-screen w-screen grey px-[28px] py-[20px] overflow-y-scroll">
+      <div className="min-h-screen w-screen grey px-[28px] py-[20px] overflow-y-scroll">
 
         <div className="bg-white rounded-[10px] w-full  px-8 lg:pb-12 pb-11 pt-8">
           <div>
