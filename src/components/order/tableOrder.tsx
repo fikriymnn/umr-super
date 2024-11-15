@@ -72,14 +72,14 @@ function TableOrder({
             <div className=" w-full">
               <div
                 style={buttonStyle}
-                className="w-full flex justify-center items-center text-white py-1 rounded-md hover:scale-110 duration-100"
+                className="w-full flex text-center justify-center items-center text-white py-1 rounded-md hover:scale-110 duration-100 uppercase"
               >
                 {statusPaket}
               </div>
             </div>
             <div className=" w-full">
               <a href={`/order/detail/${id}`}>
-                <button className="w-full flex justify-center items-center bg-blue-600 text-white px-5 py-1 rounded-md hover:scale-110 duration-100">
+                <button className="uppercase text-center w-full flex justify-center items-center bg-blue-600 text-white px-5 py-1 rounded-md hover:scale-110 duration-100">
                   Detail
                 </button>
               </a>

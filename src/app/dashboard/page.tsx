@@ -35,7 +35,7 @@ function Dashboard() {
   return (
     <div className="flex h-screen">
       <SideBar dashboard=" text-white bg-[#E3B02B]" />
-      <div className="min-h-screen w-screen grey px-[28px] overflow-y-scroll pt-5">
+      <div className="min-h-screen w-screen grey px-[28px] overflow-y-scroll pt-5 ">
         {/* grid content */}
         <GridWrapper>
           <DashCardDoubleRow title={"Mitra Terdaftar "} value={"9"} />
